@@ -22,7 +22,7 @@
 
 module main (sys_clk_p, sys_clk_n, reset_in, startup_in, step_up_in, dacclk, ctrl_2_dac,
 hi_muxsel, comp_edge, sat_flg, sw_on, FF_preset_bar, FF_clear_bar, dco_p, dco_n, da_p, da_n, db_p, db_n,
-aclk_p, aclk_n, cnv_p, cnv_n, tp, tl, clk, mode, step_up);
+aclk_p, aclk_n, cnv_p, cnv_n, tp, tl, clk, mode, startup);
 
     input wire sys_clk_p, sys_clk_n;
     input wire reset_in, startup_in, step_up_in;
@@ -47,7 +47,7 @@ aclk_p, aclk_n, cnv_p, cnv_n, tp, tl, clk, mode, step_up);
     
     output wire clk;
     wire ctrl_ready_flg;
-    output wire step_up;
+    wire step_up;
 //    output wire [9:0] counter;
 //    output wire [9:0] state;
 //    output wire cntr_load;
@@ -56,7 +56,8 @@ aclk_p, aclk_n, cnv_p, cnv_n, tp, tl, clk, mode, step_up);
     
     wire ctrl_start;
     wire clk_in;
-    wire reset, startup;
+    wire reset;
+    output wire startup;
     
     assign hi_muxsel = 0;
     

@@ -305,7 +305,6 @@
       <Filter Type="Constrs"/>
       <File Path="$PSRCDIR/constrs_1/imports/ADC_Controller_DAC/xem7010.xdc">
         <FileInfo>
-          <Attr Name="UserDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../Buck_Control/Buck_Control.srcs/constrs_1/imports/ADC_Controller_DAC/xem7010.xdc"/>
           <Attr Name="ImportTime" Val="1531836426"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -332,6 +331,7 @@
       </File>
       <File Path="$PSRCDIR/constrs_1/new/ACD_gain_test.xdc">
         <FileInfo>
+          <Attr Name="UserDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
         </FileInfo>
