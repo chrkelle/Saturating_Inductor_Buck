@@ -35,7 +35,7 @@ module stage2(clk, kp, delta_e, integ_e, p_i, prop_e, part_sum);
         );
     
     c_addsub_1 add (
-          .A(32'b0),      // input wire [31 : 0] A
+          .A(p_i),      // input wire [31 : 0] A
           .B(integ_e),  // input wire [31 : 0] B
           .CLK(clk),    // input wire CLK
           .S(part_sum)  // output wire [31 : 0] S

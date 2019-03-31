@@ -22,7 +22,7 @@
 
 module ACD(clk, reset, hi_muxsel, start, step_up, ctrl_start, dco_p, dco_n, 
            da_p, da_n, db_p, db_n, aclk_p, aclk_n, cnv_p, cnv_n, 
-           tp, tl, dacclk, ctrl_2_dac, done);
+           tp, tl, dacclk, ctrl_2_dac, done, mode);
     
     //system inputs
     input wire clk, reset, start, step_up, ctrl_start;
@@ -37,12 +37,12 @@ module ACD(clk, reset, hi_muxsel, start, step_up, ctrl_start, dco_p, dco_n,
     output wire hi_muxsel, done;
     //adc outputs
     output wire aclk_p, aclk_n, cnv_p, cnv_n, tp, tl;
-    output reg [9:0] ctrl_2_dac;
+    output reg [13:0] ctrl_2_dac;
     //controller outputs
     wire [31:0] i_out;
     wire control_done;
     //dac outputs
-    output wire dacclk;
+    output wire dacclk, mode;
    
     //system wires 
     wire sys_clk;
@@ -80,7 +80,7 @@ module ACD(clk, reset, hi_muxsel, start, step_up, ctrl_start, dco_p, dco_n,
     controller control(.clk(clk), .reset(reset), .step_up(step_up),.ADC_done(adc_done), .ADC_in(adc_2_ctrl), .i(i_out),
                  .control_done(control_done));
          
-    DAC dac(.clk(clk), .start(control_done), .reset(reset), .dacclk(dacclk), .dac_done(dac_done));
+    DAC_AD9744 dac(.clk(clk), .start(control_done), .reset(reset), .dacclk(dacclk), .dac_done(dac_done), .mode(mode));
     
     always @(posedge clk) begin
         if(reset) begin
@@ -100,7 +100,7 @@ module ACD(clk, reset, hi_muxsel, start, step_up, ctrl_start, dco_p, dco_n,
         //    ctrl_2_dac <= 10'b1011001111;  
         //end
         else if(control_done) begin
-            ctrl_2_dac <= {1'b1,i_out [18:10]};
+            ctrl_2_dac <= {1'b1,i_out [22:10]};
         end
         
     end

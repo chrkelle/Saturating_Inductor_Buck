@@ -33,7 +33,7 @@ module controller(clk, reset, step_up, ADC_done, ADC_in, i, control_done);
         
     //internal wires
     wire sys_clk;
-    wire signed [31:0] i_max = 511000;
+    wire signed [31:0] i_max = 8000000;
     wire signed [31:0] i_min = 10240;
     
     //state machine
@@ -58,7 +58,7 @@ module controller(clk, reset, step_up, ADC_done, ADC_in, i, control_done);
     reg s1s2_wr_i_en;
     wire signed [31:0] p_i, kp;
     assign p_i = i;
-    assign kp = step_up ? 20000 : 1000;
+    assign kp = step_up ? 11700 : 0;
     
     //s2 outputs
     wire signed [31:0] s2_prop_e, s2_part_sum;
@@ -68,7 +68,7 @@ module controller(clk, reset, step_up, ADC_done, ADC_in, i, control_done);
     reg signed [15:0] s0s1_p_error;
     wire signed [31:0] ki;
     reg s0s1_wr_i_en;
-    assign ki = step_up ? 125 : 0;
+    assign ki = step_up ? 300 : 10;
     
     //s1 outputs
     wire signed [15:0] s1_delta_e;
@@ -78,7 +78,7 @@ module controller(clk, reset, step_up, ADC_done, ADC_in, i, control_done);
     reg signed [15:0] ADC;
     wire signed [15:0] ADC_error;
     wire signed [15:0] ADC_ref;
-    assign ADC_ref = step_up ? 231 : 0; //(1.8V)
+    assign ADC_ref = step_up ? 250 : 225; //(1.8V)
     //output reg signed [31:0] p_error;
     
     //s0 outputs    

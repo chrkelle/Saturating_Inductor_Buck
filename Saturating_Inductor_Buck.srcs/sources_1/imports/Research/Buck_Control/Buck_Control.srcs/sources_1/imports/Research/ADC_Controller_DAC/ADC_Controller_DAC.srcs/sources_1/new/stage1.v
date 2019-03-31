@@ -29,7 +29,7 @@ module stage1(clk, ki, error, p_error, delta_e, integ_e);
           
     c_addsub_0 sub (
       .A(error),      // input wire [16 : 0] A
-      .B(16'b0),    // input wire [16 : 0] B
+      .B(p_error),    // input wire [16 : 0] B
       .CLK(clk),      // input wire CLK
       .S(delta_e)     // output wire [16 : 0] S
     );

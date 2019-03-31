@@ -23,7 +23,7 @@
 module ACD_gain_test(sys_clk_p, sys_clk_n, reset_in, startup_in, step_up_in, dacclk, ctrl_2_dac,
                     hi_muxsel, dco_p, dco_n, da_p, da_n, db_p, db_n,
                     aclk_p, aclk_n, cnv_p, cnv_n, tp, tl,
-                     clk, step_up);
+                     clk, mode);
 
     input wire sys_clk_p, sys_clk_n;
     input wire reset_in, startup_in, step_up_in;
@@ -32,15 +32,15 @@ module ACD_gain_test(sys_clk_p, sys_clk_n, reset_in, startup_in, step_up_in, dac
     input wire db_p,db_n;
     
     
-    output wire dacclk;
+    output wire dacclk, mode;
     output wire hi_muxsel;
-    output wire [9:0] ctrl_2_dac;
+    output wire [13:0] ctrl_2_dac;
     
     output wire aclk_p, aclk_n;
     output wire cnv_p, cnv_n, tp, tl;
     
     output wire clk;
-    output wire step_up;
+    wire step_up;
 
 //*************************
     
@@ -61,5 +61,5 @@ module ACD_gain_test(sys_clk_p, sys_clk_n, reset_in, startup_in, step_up_in, dac
     
     ACD acd_inst(.clk(clk), .reset(reset), .start(startup), .step_up(step_up), .ctrl_start(startup), .dco_p(dco_p), .dco_n(dco_n)
         ,.da_p(da_p), .da_n(da_n), .db_p(db_p), .db_n(db_n),.aclk_p(aclk_p), .aclk_n(aclk_n), 
-        .cnv_p(cnv_p), .cnv_n(cnv_n), .tp(tp), .tl(tl), .ctrl_2_dac(ctrl_2_dac), .dacclk(dacclk));  
+        .cnv_p(cnv_p), .cnv_n(cnv_n), .tp(tp), .tl(tl), .ctrl_2_dac(ctrl_2_dac), .dacclk(dacclk), .mode(mode));  
 endmodule

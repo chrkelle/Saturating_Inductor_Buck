@@ -77,24 +77,33 @@ set_property PACKAGE_PIN K4 [get_ports {sys_clk_p}]
 set_property PACKAGE_PIN J4 [get_ports {sys_clk_n}]
 
 # LEDs #####################################################################
-set_property PACKAGE_PIN N13 [get_ports {exp_flg_bar}]
-set_property IOSTANDARD LVCMOS33 [get_ports {exp_flg_bar}]
+# MC1-64 
+set_property PACKAGE_PIN F13 [get_ports {ctrl_2_dac[3]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {ctrl_2_dac[3]}]
+
+# MC1-66 
+set_property PACKAGE_PIN F14 [get_ports {ctrl_2_dac[2]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {ctrl_2_dac[2]}]
 
 # MC1-68 
-set_property PACKAGE_PIN D14 [get_ports {sat_flg}]
-set_property IOSTANDARD LVCMOS33 [get_ports {sat_flg}]
+set_property PACKAGE_PIN D14 [get_ports {ctrl_2_dac[1]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {ctrl_2_dac[1]}]
 
 # MC1-70 
-set_property PACKAGE_PIN D15 [get_ports {FF_clear_bar}]
-set_property IOSTANDARD LVCMOS33 [get_ports {FF_clear_bar}]
+set_property PACKAGE_PIN D15 [get_ports {ctrl_2_dac[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {ctrl_2_dac[0]}]
 
 # MC1-71 
-set_property PACKAGE_PIN B15 [get_ports {ctrl_ready_flg}]
-set_property IOSTANDARD LVCMOS33 [get_ports {ctrl_ready_flg}]
+set_property PACKAGE_PIN B15 [get_ports {sat_flg}]
+set_property IOSTANDARD LVCMOS33 [get_ports {sat_flg}]
 
 # MC1-72 
 set_property PACKAGE_PIN F16 [get_ports {FF_preset_bar}]
 set_property IOSTANDARD LVCMOS33 [get_ports {FF_preset_bar}]
+
+# MC1-73 
+set_property PACKAGE_PIN B16 [get_ports {FF_clear_bar}]
+set_property IOSTANDARD LVCMOS33 [get_ports {FF_clear_bar}]
 
 # MC1-74 
 set_property PACKAGE_PIN E17 [get_ports {sw_on}]
@@ -104,16 +113,16 @@ set_property IOSTANDARD LVCMOS33 [get_ports {sw_on}]
 set_property PACKAGE_PIN D16 [get_ports {comp_edge}]
 set_property IOSTANDARD LVCMOS33 [get_ports {comp_edge}]
 
-# MC2-17 
-set_property PACKAGE_PIN N19 [get_ports {reset_in}]
+# MC2-15 
+set_property PACKAGE_PIN N18 [get_ports {reset_in}]
 set_property IOSTANDARD LVCMOS25 [get_ports {reset_in}]
 
-# MC2-19 
-set_property PACKAGE_PIN M15 [get_ports {startup_in}]
+# MC2-17 
+set_property PACKAGE_PIN N19 [get_ports {startup_in}]
 set_property IOSTANDARD LVCMOS25 [get_ports {startup_in}]
 
-# MC2-21 
-set_property PACKAGE_PIN M16 [get_ports {step_up_in}]
+# MC2-19 
+set_property PACKAGE_PIN M15 [get_ports {step_up_in}]
 set_property IOSTANDARD LVCMOS25 [get_ports {step_up_in}]
 
 # MC2-23 
@@ -172,47 +181,51 @@ set_property IOSTANDARD LVDS_25 [get_ports {db_p}]
 set_property PACKAGE_PIN G13 [get_ports {db_n}]
 set_property IOSTANDARD LVDS_25 [get_ports {db_n}]
 
+# MC2-63 
+set_property PACKAGE_PIN G21 [get_ports {ctrl_2_dac[4]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {ctrl_2_dac[4]}]
+
 # MC2-65
-set_property PACKAGE_PIN G22 [get_ports {ctrl_2_dac[9]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {ctrl_2_dac[9]}]
+set_property PACKAGE_PIN G22 [get_ports {ctrl_2_dac[5]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {ctrl_2_dac[5]}]
 
 # MC2-67 
-set_property PACKAGE_PIN E22 [get_ports {ctrl_2_dac[8]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {ctrl_2_dac[8]}]
+set_property PACKAGE_PIN E22 [get_ports {ctrl_2_dac[6]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {ctrl_2_dac[6]}]
 
 # MC2-68 
-set_property PACKAGE_PIN E21 [get_ports {ctrl_2_dac[2]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {ctrl_2_dac[2]}]
+set_property PACKAGE_PIN E21 [get_ports {ctrl_2_dac[11]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {ctrl_2_dac[11]}]
 
 # MC2-69 
 set_property PACKAGE_PIN D22 [get_ports {ctrl_2_dac[7]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {ctrl_2_dac[7]}]
 
 # MC2-70 
-set_property PACKAGE_PIN D21 [get_ports {ctrl_2_dac[3]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {ctrl_2_dac[3]}]
+set_property PACKAGE_PIN D21 [get_ports {ctrl_2_dac[12]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {ctrl_2_dac[12]}]
 
 # MC2-71 
-set_property PACKAGE_PIN D20 [get_ports {ctrl_2_dac[6]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {ctrl_2_dac[6]}]
+set_property PACKAGE_PIN D20 [get_ports {ctrl_2_dac[8]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {ctrl_2_dac[8]}]
 
 # MC2-72 
-set_property PACKAGE_PIN C22 [get_ports {dacclk}]
-set_property IOSTANDARD LVCMOS33 [get_ports {dacclk}]
+set_property PACKAGE_PIN C22 [get_ports {ctrl_2_dac[13]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {ctrl_2_dac[13]}]
 
 # MC2-73 
-set_property PACKAGE_PIN C20 [get_ports {ctrl_2_dac[5]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {ctrl_2_dac[5]}]
+set_property PACKAGE_PIN C20 [get_ports {ctrl_2_dac[9]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {ctrl_2_dac[9]}]
 
 # MC2-74 
-set_property PACKAGE_PIN B22 [get_ports {ctrl_2_dac[0]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {ctrl_2_dac[0]}]
+set_property PACKAGE_PIN B22 [get_ports {dacclk}]
+set_property IOSTANDARD LVCMOS33 [get_ports {dacclk}]
 
 # MC2-75 
-set_property PACKAGE_PIN B21 [get_ports {ctrl_2_dac[4]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {ctrl_2_dac[4]}]
+set_property PACKAGE_PIN B21 [get_ports {ctrl_2_dac[10]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {ctrl_2_dac[10]}]
 
 # MC2-76 
-set_property PACKAGE_PIN A21 [get_ports {ctrl_2_dac[1]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {ctrl_2_dac[1]}]
+set_property PACKAGE_PIN A21 [get_ports {mode}]
+set_property IOSTANDARD LVCMOS33 [get_ports {mode}]
 

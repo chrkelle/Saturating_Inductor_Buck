@@ -20,31 +20,31 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module ADC_DAC_range_test(sys_clk_p, sys_clk_n, reset_in, hi_muxsel, start, dco_p, dco_n, da_p, da_n, db_p, db_n,
-            aclk_p, aclk_n, cnv_p, cnv_n, tp, tl, data, dacclk, done, clk);
+module ADC_DAC_range_test(sys_clk_p, sys_clk_n, reset, hi_muxsel, start, dco_p, dco_n, da_p, da_n, db_p, db_n,
+            aclk_p, aclk_n, cnv_p, cnv_n, tp, tl, ctrl_2_dac, dacclk, clk, mode);
     
     //system inputs
-    input wire sys_clk_p, sys_clk_n, reset_in, start;
+    input wire sys_clk_p, sys_clk_n, reset, start;
     //adc inputs
     input wire dco_p, dco_n, da_p, da_n, db_p, db_n;
     //dac inputs
     
     //system outputs
-    output wire clk, hi_muxsel, done;
+    output wire clk, hi_muxsel;
     //adc outputs
     output wire aclk_p, aclk_n, cnv_p, cnv_n, tp, tl;
-    output reg [9:0] data;
+    output reg [13:0] ctrl_2_dac;
     //dac outputs
-    output wire dacclk;
+    output wire dacclk, mode;
    
     //system wires 
-    wire sys_clk, reset;
+    wire sys_clk;
     reg  [15:0] ADC_data;
     //adc wires
     wire da, db, dco, aclk, start_adc, adc_done;
     wire [15:0] ADC_out;
     //dac wires
-    wire dac_done;
+    wire dac_done, done;
     
     assign hi_muxsel = 0;
     assign done = dac_done;
@@ -69,20 +69,18 @@ module ADC_DAC_range_test(sys_clk_p, sys_clk_n, reset_in, hi_muxsel, start, dco_
     
     //module instantiation
     clk_wiz_0 clk_wiz(.clk_out1(clk), .clk_in1(sys_clk));
-    
-    debounce  debunce(.clk(clk), .PB(~reset_in), .PB_state(reset));
-    
+        
     ADC adc(.clk(clk), .reset(reset), .dco(dco), .da(da),. db(db), .start(start_adc),
          .aclk(aclk), .cnv(cnv_p), .tp(tp), .tl(tl), .data(ADC_out), .adc_done(adc_done));
          
-    DAC dac(.clk(clk), .start(adc_done), .reset(reset), .dacclk(dacclk), .dac_done(dac_done));
+    DAC_AD9744 dac(.clk(clk), .start(adc_done), .reset(reset), .dacclk(dacclk), .dac_done(dac_done), .mode(mode));
     
     always @(posedge adc_done, posedge reset) begin
         if(reset) begin
-            data <= 0;
+            ctrl_2_dac <= 0;
         end
         else begin
-            data <= ADC_out [15:6];
+            ctrl_2_dac <= ADC_out [15:2];
         end
     end
 endmodule
