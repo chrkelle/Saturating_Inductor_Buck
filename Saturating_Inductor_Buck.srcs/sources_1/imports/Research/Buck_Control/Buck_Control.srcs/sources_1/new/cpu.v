@@ -190,12 +190,12 @@ assign exp_flg_bar = ~exp_flg;
       end       
       
       s6 : begin   // valley current detection
-        if (comp_edge)  
+        if (comp_edge || sat_flg)  
             state <= s0;
         else
             state<=s6;
  // edge detection       
-        if (comp_edge)     
+        if (comp_edge || sat_flg)     
           cntr_load <= 1'b1;
         else
           cntr_load <= 1'b0;  
