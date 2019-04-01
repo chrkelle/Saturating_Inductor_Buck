@@ -99,8 +99,8 @@ module ACD(clk, reset, hi_muxsel, start, step_up, ctrl_start, dco_p, dco_n,
         //else if(start & ~step_up) begin
         //    ctrl_2_dac <= 10'b1011001111;  
         //end
-        else if(control_done) begin
-            ctrl_2_dac <= {1'b1,i_out [22:10]};
+        else if(ctrl_start) begin
+            ctrl_2_dac <= {14'b10000100000000};
         end
         
     end
