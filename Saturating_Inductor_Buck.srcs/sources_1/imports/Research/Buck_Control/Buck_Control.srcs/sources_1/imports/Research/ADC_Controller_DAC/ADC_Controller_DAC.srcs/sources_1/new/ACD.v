@@ -97,7 +97,7 @@ module ACD(clk, reset, hi_muxsel, start, step_up, ctrl_start, dco_p, dco_n,
             ctrl_2_dac <= 0;
         end
         else if(ctrl_start) begin
-            ctrl_2_dac <= 8577;
+            ctrl_2_dac <= 8704;
         end
         
     end

@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date             : Mon Apr  1 17:20:38 2019
+| Date             : Mon Apr  1 17:56:40 2019
 | Host             : DESKTOP-EPHBFNF running 64-bit major release  (build 9200)
 | Command          : report_power -file main_power_routed.rpt -pb main_power_summary_routed.pb -rpx main_power_routed.rpx
 | Design           : main
@@ -54,13 +54,13 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.006 |        5 |       --- |             --- |
-| Slice Logic    |     0.001 |      272 |       --- |             --- |
+| Slice Logic    |     0.001 |      270 |       --- |             --- |
 |   LUT as Logic |     0.001 |      110 |     32600 |            0.34 |
-|   Register     |    <0.001 |      123 |     65200 |            0.19 |
+|   Register     |    <0.001 |      121 |     65200 |            0.19 |
 |   CARRY4       |    <0.001 |       17 |      8150 |            0.21 |
 |   BUFG         |    <0.001 |        1 |        32 |            3.13 |
 |   Others       |     0.000 |       19 |       --- |             --- |
-| Signals        |     0.002 |      202 |       --- |             --- |
+| Signals        |     0.002 |      200 |       --- |             --- |
 | PLL            |     0.123 |        1 |         5 |           20.00 |
 | I/O            |     0.088 |       34 |       250 |           13.60 |
 | Static Power   |     0.074 |          |           |                 |
