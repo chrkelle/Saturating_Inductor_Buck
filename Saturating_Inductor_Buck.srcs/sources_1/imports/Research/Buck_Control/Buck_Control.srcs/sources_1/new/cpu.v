@@ -19,7 +19,7 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 module cpu
-# (localparam adc_delay = 1,on_time = 80,sw_off_delay= 140, sw_off_clear= 150, preset_delay = 4)
+# (localparam adc_delay = 1,on_time = 80,sw_off_delay= 200, sw_off_clear= 210, preset_delay = 4)
 (
 input wire clk,rst,
 input wire comp_edge, sat_flg,
@@ -190,7 +190,7 @@ assign exp_flg_bar = ~exp_flg;
       end       
       
       s6 : begin   // valley current detection
-        if (comp_edge)  
+        if (comp_edge || sat_flg)  
             state <= s0;
         else
             state<=s6;
