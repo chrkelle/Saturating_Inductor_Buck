@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date         : Mon Apr  1 17:56:15 2019
+| Date         : Mon Apr  1 18:39:46 2019
 | Host         : DESKTOP-EPHBFNF running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file main_control_sets_placed.rpt
 | Design       : main
@@ -49,9 +49,9 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |               6 |            4 |
+| No           | No                    | No                     |               6 |            2 |
 | No           | No                    | Yes                    |              25 |           13 |
-| No           | Yes                   | No                     |              86 |           32 |
+| No           | Yes                   | No                     |              86 |           29 |
 | Yes          | No                    | No                     |               0 |            0 |
 | Yes          | No                    | Yes                    |               0 |            0 |
 | Yes          | Yes                   | No                     |               4 |            3 |
@@ -61,18 +61,18 @@ Table of Contents
 4. Detailed Control Set Information
 -----------------------------------
 
-+----------------------+------------------------+-------------------------------------+------------------+----------------+
-|     Clock Signal     |      Enable Signal     |           Set/Reset Signal          | Slice Load Count | Bel Load Count |
-+----------------------+------------------------+-------------------------------------+------------------+----------------+
-|  inst0/inst/clk_out1 | cpu_inst/sw_on_i_1_n_0 | debounce_inst2/reset                |                1 |              1 |
-|  inst0/inst/clk_out1 | acd_inst/adc/n_cnv     | debounce_inst2/reset                |                1 |              1 |
-|  inst0/inst/clk_out1 | cpu_inst/ctrl_start    | debounce_inst2/reset                |                1 |              2 |
-|  pipe_clk_BUFG       |                        | debounce_inst2/reset                |                1 |              4 |
-|  inst0/inst/clk_out1 |                        |                                     |                4 |              6 |
-|  inst0/inst/clk_out1 |                        | cpu_inst/cntr_load_reg_n_0          |                3 |             10 |
-|  inst0/inst/clk_out1 |                        | debounce_inst1/PB_cnt[0]_i_1__0_n_0 |                7 |             25 |
-|  inst0/inst/clk_out1 |                        | debounce_inst2/PB_idle              |                7 |             25 |
-|  inst0/inst/clk_out1 |                        | debounce_inst2/reset                |               27 |             47 |
-+----------------------+------------------------+-------------------------------------+------------------+----------------+
++----------------------+------------------------+----------------------------+------------------+----------------+
+|     Clock Signal     |      Enable Signal     |      Set/Reset Signal      | Slice Load Count | Bel Load Count |
++----------------------+------------------------+----------------------------+------------------+----------------+
+|  inst0/inst/clk_out1 | cpu_inst/sw_on_i_1_n_0 | debounce_inst2/reset       |                1 |              1 |
+|  inst0/inst/clk_out1 | acd_inst/adc/n_cnv     | debounce_inst2/reset       |                1 |              1 |
+|  inst0/inst/clk_out1 | cpu_inst/ctrl_start    | debounce_inst2/reset       |                1 |              2 |
+|  pipe_clk_BUFG       |                        | debounce_inst2/reset       |                2 |              4 |
+|  inst0/inst/clk_out1 |                        |                            |                2 |              6 |
+|  inst0/inst/clk_out1 |                        | cpu_inst/cntr_load_reg_n_0 |                3 |             10 |
+|  inst0/inst/clk_out1 |                        | debounce_inst1/PB_idle     |                7 |             25 |
+|  inst0/inst/clk_out1 |                        | debounce_inst2/PB_idle     |                7 |             25 |
+|  inst0/inst/clk_out1 |                        | debounce_inst2/reset       |               23 |             47 |
++----------------------+------------------------+----------------------------+------------------+----------------+
 
 
