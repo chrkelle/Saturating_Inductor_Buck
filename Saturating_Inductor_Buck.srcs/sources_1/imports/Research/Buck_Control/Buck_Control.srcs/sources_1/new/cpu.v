@@ -29,6 +29,8 @@ input wire startup,
 output wire FF_preset_bar,
 output wire FF_clear_bar,
 output wire exp_flg_bar,
+output wire state_0,
+output wire state_1,
 
 output reg sw_on,
 output reg ctrl_start
@@ -42,13 +44,15 @@ output reg ctrl_start
 (* FSM_ENCODING="ONE-HOT", SAFE_IMPLEMENTATION="YES", SAFE_RECOVERY_STATE="10'b0000000000" *)reg[9:0] state;
 
 localparam [9:0] 
-s0 =10'b0000000000,
-s1=10'b0000000001,  // delay for switch on ringing
-s2=10'b0000000010,  // start controller
-s3=10'b0000000100,  // on timmer
-s4=10'b0000001000,  // switch off delay
-s5=10'b0000010000,  // FF clear
-s6=10'b0000100000;  // valley current detection
+
+s0=    10'b0000000001,  
+s1=    10'b0000000010,  // delay for switch on ringing
+s2=    10'b0000000100,  // start controller
+s3=    10'b0000001000,  // on timmer
+s4=    10'b0000010000,  // switch off delay
+s4_5 = 10'b0000100000,
+s5=    10'b0001000000,  // FF_clear  
+s6=    10'b0010000000;  // valley current detection
 
 
 wire [9:0] counter;
@@ -68,6 +72,8 @@ on_time_counter on_time_counter_inst (
 assign FF_preset_bar = ~FF_preset;
 assign FF_clear_bar = ~FF_clear;
 assign exp_flg_bar = ~exp_flg;
+assign state_0 = (state == s4 | state == s6);
+assign state_1 = (state == s5 | state == s6);
 
    always@(posedge clk) begin
         comp_edge_p <= comp_edge;
@@ -78,9 +84,9 @@ assign exp_flg_bar = ~exp_flg;
       if (rst) begin
               state <= s0;
               sw_on <= 1'b0; 
-              FF_clear <= 1'b0;
+              FF_clear <= 1'b0; //change
               FF_clear_reg <= 8'b00000000;
-              FF_preset <= 1'b1; 
+              FF_preset <= 1'b1; //change 
               ctrl_start <= 1'b0;  
               ctrl_start_reg <= 3'b000;             
               ctrl_ready_detect <= 1'b0;
@@ -159,17 +165,17 @@ assign exp_flg_bar = ~exp_flg;
             if (sat_flg == 1'b0) 
                 state <= s5;
              else  
-                state <= s0; 
+                state <= s4_5; 
                 
-             if (sat_flg == 1'b0)
-                FF_clear_reg <= 8'b11111111;
-             else
-                FF_clear_reg <= 8'b00000000;
+//             if (sat_flg == 1'b0)
+//                FF_clear_reg <= 8'b11111111;
+//             else
+//                FF_clear_reg <= 8'b00000000;
              
-             if (sat_flg == 1'b0)   
-                cntr_load <= 1'b0;
-             else
-                cntr_load <= 1'b1;    
+//             if (sat_flg == 1'b0)   
+//                cntr_load <= 1'b0;
+//             else
+//                cntr_load <= 1'b1;    
              
              if (ctrl_ready_detect == 1'b1) 
                     exp_flg <= 1'b0;
@@ -179,26 +185,33 @@ assign exp_flg_bar = ~exp_flg;
              //FF_preset <= 1'b1;
       end
       
+      s4_5 : begin
+                state <= s0;
+                cntr_load <= 1;
+             end
+             
       s5: begin
            if (counter >= sw_off_clear)
                 state <= s6;
            else
                 state <= s5;
         //  4 clk period width pulse      
-           FF_clear <= FF_clear_reg;
-           FF_clear_reg <= {FF_clear_reg[6:0],1'b0};
+           FF_clear <= 1'b1;//FF_clear_reg[0];
+           //FF_clear_reg <= {FF_clear_reg[6:0],1'b0};
       end       
       
       s6 : begin   // valley current detection
-        if (comp_edge || sat_flg)  
+        FF_clear <= 1'b0;
+        cntr_load <= 1'b1;
+        if (sat_flg || comp_edge)  
             state <= s0;
         else
             state<=s6;
  // edge detection       
-        if (comp_edge || sat_flg)     
-          cntr_load <= 1'b1;
-        else
-          cntr_load <= 1'b0;  
+//        if (sat_flg || comp_edge)     
+//          cntr_load <= 1'b1;
+//        else
+//          cntr_load <= 1'b0;  
 
       end   
        

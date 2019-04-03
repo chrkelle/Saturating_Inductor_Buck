@@ -22,7 +22,7 @@
 
 module main (sys_clk_p, sys_clk_n, reset_in, startup_in, step_up_in, dacclk, ctrl_2_dac,
 hi_muxsel, comp_edge, sat_flg, sw_on, FF_preset_bar, FF_clear_bar, dco_p, dco_n, da_p, da_n, db_p, db_n,
-aclk_p, aclk_n, cnv_p, cnv_n, tp, tl, clk, mode, startup);
+aclk_p, aclk_n, cnv_p, cnv_n, tp, tl, clk, mode, state_0, state_1);
 
     input wire sys_clk_p, sys_clk_n;
     input wire reset_in, startup_in, step_up_in;
@@ -57,7 +57,10 @@ aclk_p, aclk_n, cnv_p, cnv_n, tp, tl, clk, mode, startup);
     wire ctrl_start;
     wire clk_in;
     wire reset;
-    output wire startup;
+    wire startup;
+    output wire state_0, state_1;
+    reg startup_FF;
+    reg step_up_FF;
     
     assign hi_muxsel = 0;
     
@@ -73,7 +76,7 @@ aclk_p, aclk_n, cnv_p, cnv_n, tp, tl, clk, mode, startup);
     
     
     cpu cpu_inst (.clk(clk),.rst(reset),
-                    .startup(startup),
+                    .startup(startup_FF),
                     .comp_edge(comp_edge),
                     .sat_flg(sat_flg),
                     .ctrl_ready_flg(ctrl_ready_flg),
@@ -81,17 +84,31 @@ aclk_p, aclk_n, cnv_p, cnv_n, tp, tl, clk, mode, startup);
                     .ctrl_start(ctrl_start),
                     .FF_preset_bar(FF_preset_bar),
                     .FF_clear_bar(FF_clear_bar),   
-                    .exp_flg_bar(exp_flg_bar)
-//                    .counter(counter),
-//                    .cntr_load(cntr_load),
-//                    .state(state)
+                    .exp_flg_bar(exp_flg_bar),
+                    .state_0(state_0),
+                    .state_1(state_1)
                     );
 
-    ACD acd_inst(.clk(clk), .reset(reset), .start(startup), .step_up(step_up), .ctrl_start(ctrl_start), .dco_p(dco_p), .dco_n(dco_n)
+    ACD acd_inst(.clk(clk), .reset(reset), .start(startup_FF), .step_up(step_up_FF), .ctrl_start(ctrl_start), .dco_p(dco_p), .dco_n(dco_n)
     ,.da_p(da_p), .da_n(da_n), .db_p(db_p), .db_n(db_n),.aclk_p(aclk_p), .aclk_n(aclk_n), 
     .cnv_p(cnv_p), .cnv_n(cnv_n), .tp(tp), .tl(tl), .ctrl_2_dac(ctrl_2_dac), .dacclk(dacclk), 
     .done(ctrl_ready_flg), .mode(mode));   
     
-
+    always @(posedge clk) begin
+        if(reset)
+            startup_FF <= 0;
+        else if(startup_FF == 0)
+            startup_FF <= ~startup_FF & startup;
+        else
+            startup_FF <= 1;
+    end
     
+    always @(posedge clk) begin
+            if(reset)
+                step_up_FF <= 0;
+            else if(step_up_FF == 0)
+                step_up_FF <= ~step_up_FF & step_up;
+            else
+                step_up_FF <= 1;
+     end
 endmodule

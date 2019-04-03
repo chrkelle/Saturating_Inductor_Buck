@@ -94,7 +94,7 @@ module ACD(clk, reset, hi_muxsel, start, step_up, ctrl_start, dco_p, dco_n,
     
     always @(posedge clk) begin
         if(reset) begin
-            ctrl_2_dac <= 0;
+            ctrl_2_dac <= 8192;
         end
         //else if(start & ~step_up) begin
         //    ctrl_2_dac <= 10'b1011001111;  

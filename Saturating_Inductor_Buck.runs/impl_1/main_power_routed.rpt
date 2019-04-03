@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date             : Tue Apr  2 14:18:56 2019
+| Date             : Tue Apr  2 21:17:57 2019
 | Host             : DESKTOP-EPHBFNF running 64-bit major release  (build 9200)
 | Command          : report_power -file main_power_routed.rpt -pb main_power_summary_routed.pb -rpx main_power_routed.rpx
 | Design           : main
@@ -30,15 +30,15 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.380        |
+| Total On-Chip Power (W)  | 0.355        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.305        |
+| Dynamic (W)              | 0.281        |
 | Device Static (W)        | 0.075        |
 | Total Off-Chip Power (W) | 0.001        |
 | Effective TJA (C/W)      | 2.8          |
-| Max Ambient (C)          | 98.9         |
-| Junction Temperature (C) | 26.1         |
+| Max Ambient (C)          | 99.0         |
+| Junction Temperature (C) | 26.0         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -54,18 +54,18 @@ Table of Contents
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
 | Clocks                  |     0.021 |        5 |       --- |             --- |
-| Slice Logic             |     0.016 |     2322 |       --- |             --- |
-|   LUT as Logic          |     0.010 |      574 |     32600 |            1.76 |
+| Slice Logic             |     0.015 |     2337 |       --- |             --- |
+|   LUT as Logic          |     0.009 |      583 |     32600 |            1.79 |
 |   CARRY4                |     0.003 |      199 |      8150 |            2.44 |
-|   Register              |     0.003 |     1182 |     65200 |            1.81 |
+|   Register              |     0.003 |     1185 |     65200 |            1.82 |
 |   LUT as Shift Register |    <0.001 |        7 |      9600 |            0.07 |
 |   BUFG                  |    <0.001 |        1 |        32 |            3.13 |
 |   Others                |     0.000 |      231 |       --- |             --- |
-| Signals                 |     0.020 |     1410 |       --- |             --- |
+| Signals                 |     0.018 |     1424 |       --- |             --- |
 | PLL                     |     0.123 |        1 |         5 |           20.00 |
-| I/O                     |     0.125 |       41 |       250 |           16.40 |
+| I/O                     |     0.104 |       42 |       250 |           16.80 |
 | Static Power            |     0.075 |          |           |                 |
-| Total                   |     0.380 |          |           |                 |
+| Total                   |     0.355 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -75,9 +75,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.082 |       0.072 |      0.010 |
-| Vccaux    |       1.800 |     0.083 |       0.070 |      0.013 |
-| Vcco33    |       3.300 |     0.014 |       0.013 |      0.001 |
+| Vccint    |       1.000 |     0.079 |       0.070 |      0.010 |
+| Vccaux    |       1.800 |     0.082 |       0.069 |      0.013 |
+| Vcco33    |       3.300 |     0.008 |       0.007 |      0.001 |
 | Vcco25    |       2.500 |     0.027 |       0.026 |      0.001 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -146,16 +146,16 @@ Table of Contents
 +---------------------------------------------------------------------------------------------+-----------+
 | Name                                                                                        | Power (W) |
 +---------------------------------------------------------------------------------------------+-----------+
-| main                                                                                        |     0.305 |
-|   acd_inst                                                                                  |     0.098 |
+| main                                                                                        |     0.281 |
+|   acd_inst                                                                                  |     0.095 |
 |     adc                                                                                     |     0.002 |
 |       sync                                                                                  |    <0.001 |
-|     control                                                                                 |     0.047 |
-|       s0                                                                                    |     0.001 |
-|         add                                                                                 |     0.001 |
-|           U0                                                                                |     0.001 |
-|             xst_addsub                                                                      |     0.001 |
-|               i_baseblox.i_baseblox_addsub                                                  |     0.001 |
+|     control                                                                                 |     0.045 |
+|       s0                                                                                    |    <0.001 |
+|         add                                                                                 |    <0.001 |
+|           U0                                                                                |    <0.001 |
+|             xst_addsub                                                                      |    <0.001 |
+|               i_baseblox.i_baseblox_addsub                                                  |    <0.001 |
 |                 pipelining.stages[1].slices[1].first.first_stage_adder                      |    <0.001 |
 |                   i_lut6.i_lut6_addsub                                                      |    <0.001 |
 |                     i_q.i_simple.qreg                                                       |    <0.001 |
@@ -167,11 +167,11 @@ Table of Contents
 |                 pipelining.stages[2].slices[2].laststage.diagonal.diagonal_adder            |    <0.001 |
 |                   i_lut6.i_lut6_addsub                                                      |    <0.001 |
 |                     i_q.i_simple.qreg                                                       |    <0.001 |
-|       s1                                                                                    |     0.012 |
-|         mult                                                                                |     0.011 |
-|           U0                                                                                |     0.011 |
-|             i_mult                                                                          |     0.011 |
-|               gLUT.gLUT_speed.iLUT                                                          |     0.011 |
+|       s1                                                                                    |     0.011 |
+|         mult                                                                                |     0.010 |
+|           U0                                                                                |     0.010 |
+|             i_mult                                                                          |     0.010 |
+|               gLUT.gLUT_speed.iLUT                                                          |     0.010 |
 |                 extra_pipeline.extraoutputdel                                               |     0.001 |
 |         sub                                                                                 |     0.002 |
 |           U0                                                                                |     0.002 |
