@@ -162,7 +162,7 @@ assign state_1 = (state == s5 | state == s6);
       
       
       s4 : begin   // saturation detectioin   
-            if (sat_flg == 1'b0) 
+            if (~sat_flg) 
                 state <= s5;
              else  
                 state <= s4_5; 
