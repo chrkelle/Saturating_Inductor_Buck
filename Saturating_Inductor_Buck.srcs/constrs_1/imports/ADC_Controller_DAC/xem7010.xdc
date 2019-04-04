@@ -130,8 +130,8 @@ set_property PACKAGE_PIN N22 [get_ports {cnv_p}]
 set_property IOSTANDARD LVCMOS25 [get_ports {cnv_p}]
 
 # MC2-24 
-set_property PACKAGE_PIN M18 [get_ports {state_0}]
-set_property IOSTANDARD LVCMOS25 [get_ports {state_0}]
+set_property PACKAGE_PIN M18 [get_ports {adc_done}]
+set_property IOSTANDARD LVCMOS25 [get_ports {adc_done}]
 
 # MC1-25 
 set_property PACKAGE_PIN N3 [get_ports {cnv_n}]
@@ -142,8 +142,8 @@ set_property PACKAGE_PIN M21 [get_ports {tl}]
 set_property IOSTANDARD LVCMOS25 [get_ports {tl}]
 
 # MC2-29 
-set_property PACKAGE_PIN L21 [get_ports {state_1}]
-set_property IOSTANDARD LVCMOS25 [get_ports {state_1}]
+set_property PACKAGE_PIN L21 [get_ports {control_done}]
+set_property IOSTANDARD LVCMOS25 [get_ports {control_done}]
 
 # MC2-31 
 set_property PACKAGE_PIN L19 [get_ports {aclk_p}]

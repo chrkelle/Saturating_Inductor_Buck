@@ -22,7 +22,7 @@
 
 module ACD(clk, reset, hi_muxsel, start, step_up, ctrl_start, dco_p, dco_n, 
            da_p, da_n, db_p, db_n, aclk_p, aclk_n, cnv_p, cnv_n, 
-           tp, tl, dacclk, ctrl_2_dac, done, mode);
+           tp, tl, dacclk, ctrl_2_dac, done, mode, control_done, adc_done);
     
     //system inputs
     input wire clk, reset, start, step_up, ctrl_start;
@@ -40,7 +40,7 @@ module ACD(clk, reset, hi_muxsel, start, step_up, ctrl_start, dco_p, dco_n,
     output reg [13:0] ctrl_2_dac;
     //controller outputs
     wire [31:0] i_out;
-    wire control_done;
+    output wire control_done;
     //dac outputs
     output wire dacclk, mode;
    
@@ -49,7 +49,7 @@ module ACD(clk, reset, hi_muxsel, start, step_up, ctrl_start, dco_p, dco_n,
     reg  [15:0] ADC_data;
     //adc wires
     wire da, db, dco, aclk, start_adc;
-    wire adc_done;
+    output wire adc_done;
     wire [15:0] ADC_out;
     //dac wires
     wire dac_done;

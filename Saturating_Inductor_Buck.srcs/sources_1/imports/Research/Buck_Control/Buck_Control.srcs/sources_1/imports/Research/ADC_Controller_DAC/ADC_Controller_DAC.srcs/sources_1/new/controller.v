@@ -173,7 +173,7 @@ module controller(clk, reset, step_up, ADC_done, ADC_in, i, control_done);
             wr_i_en <= 0;
             ADC     <= 0;
         end
-        else if(wr_i_en & s0s1_wr_i_en)begin
+        else if(wr_i_en & (s0s1_wr_i_en))begin
             wr_i_en <= 0;
         end
         else if(ADC_done) begin
@@ -191,9 +191,10 @@ module controller(clk, reset, step_up, ADC_done, ADC_in, i, control_done);
         
         case(state)
             0:  begin   //wait for ADC signal
+                    
                     if(ADC_done) begin
-                        n_state = 1;
                         n_count = 0;
+                        n_state = 1;
                     end
                 end
             1:  begin   //create setup time for s0s1 FF

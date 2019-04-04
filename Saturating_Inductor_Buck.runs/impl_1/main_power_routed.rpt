@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date             : Thu Apr  4 09:42:03 2019
+| Date             : Thu Apr  4 12:02:32 2019
 | Host             : DESKTOP-EPHBFNF running 64-bit major release  (build 9200)
 | Command          : report_power -file main_power_routed.rpt -pb main_power_summary_routed.pb -rpx main_power_routed.rpx
 | Design           : main
@@ -30,7 +30,7 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.355        |
+| Total On-Chip Power (W)  | 0.356        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
 | Dynamic (W)              | 0.281        |
@@ -53,19 +53,19 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.021 |        5 |       --- |             --- |
-| Slice Logic             |     0.015 |     2337 |       --- |             --- |
-|   LUT as Logic          |     0.009 |      583 |     32600 |            1.79 |
+| Clocks                  |     0.022 |        5 |       --- |             --- |
+| Slice Logic             |     0.015 |     2335 |       --- |             --- |
+|   LUT as Logic          |     0.009 |      581 |     32600 |            1.78 |
 |   CARRY4                |     0.003 |      199 |      8150 |            2.44 |
-|   Register              |     0.003 |     1185 |     65200 |            1.82 |
+|   Register              |     0.003 |     1186 |     65200 |            1.82 |
 |   LUT as Shift Register |    <0.001 |        7 |      9600 |            0.07 |
 |   BUFG                  |    <0.001 |        1 |        32 |            3.13 |
 |   Others                |     0.000 |      231 |       --- |             --- |
-| Signals                 |     0.018 |     1424 |       --- |             --- |
+| Signals                 |     0.018 |     1422 |       --- |             --- |
 | PLL                     |     0.123 |        1 |         5 |           20.00 |
-| I/O                     |     0.104 |       42 |       250 |           16.80 |
+| I/O                     |     0.103 |       42 |       250 |           16.80 |
 | Static Power            |     0.075 |          |           |                 |
-| Total                   |     0.355 |          |           |                 |
+| Total                   |     0.356 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -75,7 +75,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.079 |       0.070 |      0.010 |
+| Vccint    |       1.000 |     0.080 |       0.070 |      0.010 |
 | Vccaux    |       1.800 |     0.082 |       0.069 |      0.013 |
 | Vcco33    |       3.300 |     0.008 |       0.007 |      0.001 |
 | Vcco25    |       2.500 |     0.027 |       0.026 |      0.001 |
@@ -147,7 +147,7 @@ Table of Contents
 | Name                                                                                        | Power (W) |
 +---------------------------------------------------------------------------------------------+-----------+
 | main                                                                                        |     0.281 |
-|   acd_inst                                                                                  |     0.095 |
+|   acd_inst                                                                                  |     0.096 |
 |     adc                                                                                     |     0.002 |
 |       sync                                                                                  |    <0.001 |
 |     control                                                                                 |     0.045 |
@@ -167,7 +167,7 @@ Table of Contents
 |                 pipelining.stages[2].slices[2].laststage.diagonal.diagonal_adder            |    <0.001 |
 |                   i_lut6.i_lut6_addsub                                                      |    <0.001 |
 |                     i_q.i_simple.qreg                                                       |    <0.001 |
-|       s1                                                                                    |     0.011 |
+|       s1                                                                                    |     0.012 |
 |         mult                                                                                |     0.010 |
 |           U0                                                                                |     0.010 |
 |             i_mult                                                                          |     0.010 |
@@ -188,7 +188,7 @@ Table of Contents
 |                 pipelining.stages[2].slices[2].laststage.diagonal.diagonal_adder            |    <0.001 |
 |                   i_lut6.i_lut6_addsub                                                      |    <0.001 |
 |                     i_q.i_simple.qreg                                                       |    <0.001 |
-|       s2                                                                                    |     0.021 |
+|       s2                                                                                    |     0.020 |
 |         add                                                                                 |     0.005 |
 |           U0                                                                                |     0.005 |
 |             xst_addsub                                                                      |     0.005 |

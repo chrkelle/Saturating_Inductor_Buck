@@ -22,7 +22,7 @@
 
 module main (sys_clk_p, sys_clk_n, reset_in, startup_in, step_up_in, dacclk, ctrl_2_dac,
 hi_muxsel, comp_edge, sat_flg, sw_on, FF_preset_bar, FF_clear_bar, dco_p, dco_n, da_p, da_n, db_p, db_n,
-aclk_p, aclk_n, cnv_p, cnv_n, tp, tl, clk, mode, state_0, state_1);
+aclk_p, aclk_n, cnv_p, cnv_n, tp, tl, clk, mode, adc_done, control_done);
 
     input wire sys_clk_p, sys_clk_n;
     input wire reset_in, startup_in, step_up_in;
@@ -58,7 +58,7 @@ aclk_p, aclk_n, cnv_p, cnv_n, tp, tl, clk, mode, state_0, state_1);
     wire clk_in;
     wire reset;
     wire startup;
-    output wire state_0, state_1;
+    output wire adc_done, control_done;
     reg startup_FF;
     reg step_up_FF;
     
@@ -84,15 +84,13 @@ aclk_p, aclk_n, cnv_p, cnv_n, tp, tl, clk, mode, state_0, state_1);
                     .ctrl_start(ctrl_start),
                     .FF_preset_bar(FF_preset_bar),
                     .FF_clear_bar(FF_clear_bar),   
-                    .exp_flg_bar(exp_flg_bar),
-                    .state_0(state_0),
-                    .state_1(state_1)
+                    .exp_flg_bar(exp_flg_bar)
                     );
 
     ACD acd_inst(.clk(clk), .reset(reset), .start(startup_FF), .step_up(step_up_FF), .ctrl_start(ctrl_start), .dco_p(dco_p), .dco_n(dco_n)
     ,.da_p(da_p), .da_n(da_n), .db_p(db_p), .db_n(db_n),.aclk_p(aclk_p), .aclk_n(aclk_n), 
     .cnv_p(cnv_p), .cnv_n(cnv_n), .tp(tp), .tl(tl), .ctrl_2_dac(ctrl_2_dac), .dacclk(dacclk), 
-    .done(ctrl_ready_flg), .mode(mode));   
+    .done(ctrl_ready_flg), .mode(mode), .control_done(control_done), .adc_done(adc_done));   
     
     always @(posedge clk) begin
         if(reset)
