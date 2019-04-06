@@ -19,7 +19,7 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 module cpu
-# (localparam adc_delay = 1,on_time = 80,sw_off_delay= 140, sw_off_clear= 150, preset_delay = 4)
+# (localparam adc_delay = 1,on_time = 80,sw_off_delay= 150, sw_off_clear= 150, preset_delay = 4)
 (
 input wire clk,rst,
 input wire comp_edge, sat_flg,
@@ -125,7 +125,6 @@ assign state_1 = (state == s5 | state == s6);
             
           ctrl_start_reg <= 3'b110;         
 		  sw_on<=1'b1;
-		  FF_preset<=1'b0;
      end
      
      
@@ -196,14 +195,14 @@ assign state_1 = (state == s5 | state == s6);
            else
                 state <= s5;
         //  4 clk period width pulse      
-           FF_clear <= 1'b1;//FF_clear_reg[0];
+           //FF_clear <= 1'b1;//FF_clear_reg[0];
            //FF_clear_reg <= {FF_clear_reg[6:0],1'b0};
       end       
       
       s6 : begin   // valley current detection
-        FF_clear <= 1'b0;
+        //FF_clear <= 1'b0;
         cntr_load <= 1'b1;
-        if (sat_flg || comp_edge)  
+        if (sat_flg)  
             state <= s0;
         else
             state<=s6;
