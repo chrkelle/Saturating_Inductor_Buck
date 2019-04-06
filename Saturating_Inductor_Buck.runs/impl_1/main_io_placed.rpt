@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date                      : Fri Apr  5 22:08:37 2019
+| Date                      : Sat Apr  6 19:46:00 2019
 | Host                      : DESKTOP-EPHBFNF running 64-bit major release  (build 9200)
 | Command                   : report_io -file main_io_placed.rpt
 | Design                    : main
@@ -338,7 +338,7 @@ Table of Contents
 | M15        | step_up_in     | High Range | IO_L24P_T3_RS1_15            | INPUT         | LVCMOS25    |      15 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | M16        |                | High Range | IO_L24N_T3_RS0_15            | User IO       |             |      15 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | M17        |                | High Range | IO_25_15                     | User IO       |             |      15 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
-| M18        | state_0        | High Range | IO_L16P_T2_A28_15            | OUTPUT        | LVCMOS25    |      15 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
+| M18        | step_up_FF     | High Range | IO_L16P_T2_A28_15            | OUTPUT        | LVCMOS25    |      15 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | M19        |                |            | GND                          | GND           |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
 | M20        |                | High Range | IO_L18N_T2_A23_15            | User IO       |             |      15 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | M21        | tl             | High Range | IO_L10P_T1_AD11P_15          | OUTPUT        | LVCMOS25    |      15 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
