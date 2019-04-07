@@ -22,7 +22,7 @@
 
 module ACD(clk, reset, hi_muxsel, start, step_up, ctrl_start, dco_p, dco_n, 
            da_p, da_n, db_p, db_n, aclk_p, aclk_n, cnv_p, cnv_n, 
-           tp, tl, dacclk, ctrl_2_dac, done, mode);
+           tp, tl, dacclk, ctrl_2_dac, done, mode, adc_done);
     
     //system inputs
     input wire clk, reset, start, step_up, ctrl_start;
@@ -49,7 +49,7 @@ module ACD(clk, reset, hi_muxsel, start, step_up, ctrl_start, dco_p, dco_n,
     reg  [15:0] ADC_data;
     //adc wires
     wire da, db, dco, aclk, start_adc;
-    wire adc_done;
+    output wire adc_done;
     wire [15:0] ADC_out;
     //dac wires
     wire dac_done;
@@ -74,7 +74,7 @@ module ACD(clk, reset, hi_muxsel, start, step_up, ctrl_start, dco_p, dco_n,
     OBUFDS_inst0(.O(aclk_p), .OB(aclk_n), .I(aclk));
     
     //module instantiation        
-    ADC adc(.clk(clk), .reset(reset), .dco(dco), .da(da),. db(db), .start(start_adc),
+    ADC_v1 adc(.clk(clk), .reset(reset), .dco(dco), .da(da),. db(db), .start(start_adc),
          .aclk(aclk), .cnv(cnv_p), .tp(tp), .tl(tl), .data(ADC_out), .adc_done(adc_done));
          
     controller control(.clk(clk), .reset(reset), .step_up(step_up),.ADC_done(adc_done), .ADC_in(adc_2_ctrl), .i(i_out),
