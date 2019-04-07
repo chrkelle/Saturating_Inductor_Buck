@@ -22,7 +22,7 @@
 `define tcvnh 12 //was 6
 `define tconv 23 //was 23
 `define tfclk 26 //was 25
-`define acq   5
+`define acq   7
 
 module ADC_v1 (input  wire clk,
             input  wire reset,
@@ -35,7 +35,7 @@ module ADC_v1 (input  wire clk,
             output reg  cnv,
             output reg  tp,
             output reg  tl,
-            output reg [15:0] data,
+            output wire [15:0] data,
             output reg  adc_done);
             
     reg n_tp, n_aclk, n_cnv, n_adc_done;
@@ -44,6 +44,7 @@ module ADC_v1 (input  wire clk,
     reg [5:0]  n_count;	
     reg [2:0]  n_state;
     reg [15:0] n_data;
+    reg [17:0] fdata;
     reg [2:0]  state;
     reg n_tl;
     wire x, y, dap2, dbp2, dcop2, dcop3, dcop4;
@@ -60,6 +61,8 @@ module ADC_v1 (input  wire clk,
                    
     assign x = dcop4 & ~dcop3;
     assign y = ~dcop4 & dcop3;
+    assign data = fdata[17:2];
+
                  
     always@* begin
                      
@@ -69,7 +72,7 @@ module ADC_v1 (input  wire clk,
         n_aclk       = aclk;
         n_cnv        = cnv;
         n_count      = count + 1;
-        n_data       = data;
+        n_data       = fdata;
         n_adc_done   = adc_done;
  
          case(state)
@@ -153,13 +156,13 @@ module ADC_v1 (input  wire clk,
      
      always @(posedge clk) begin  
          if(x||y) begin
-         data [15:8] <= n_data[13:6];
-         data [7]    <= dap2;
-         data [6]    <= dbp2;
+         fdata [17:6] <= n_data[15:4];
+         fdata [5]    <= dap2;
+         fdata [4]    <= dbp2;
          end
          else if(state == 3) begin
-            data [7] <= da;
-            data [6] <= db;
+            fdata [5] <= da;
+            fdata [4] <= db;
          end
      end
      

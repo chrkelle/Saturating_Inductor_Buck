@@ -69,8 +69,7 @@ module ACD_timing();
                 .dacclk(dacclk),
                 .ctrl_2_dac(ctrl_2_dac),
                 .done(done),
-                .mode(mode), 
-                .adc_done(adc_done));
+                .mode(mode));
         
         IBUFDS #(.DIFF_TERM("FALSE"), .IBUF_LOW_PWR("FALSE"), .IOSTANDARD("LVDS_25")) 
                     IBUFDS_inst0 (.O(clk_in), .I(sys_clk_p), .IB(sys_clk_n));

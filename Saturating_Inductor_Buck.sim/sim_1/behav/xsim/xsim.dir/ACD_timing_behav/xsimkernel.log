@@ -1,4 +1,7 @@
-Running: xsim.dir/ACD_timing_behav/xsimk.exe -simmode gui -wdb ACD_timing_behav.wdb -simrunnum 0 -socket 57299
+Running: xsim.dir/ACD_timing_behav/xsimk.exe -simmode gui -wdb ACD_timing_behav.wdb -simrunnum 0 -socket 54942
 Design successfully loaded
-Design Loading Memory Usage: 7596 KB (Peak: 7596 KB)
-Design Loading CPU Usage: 77 ms
+Design Loading Memory Usage: 7580 KB (Peak: 7580 KB)
+Design Loading CPU Usage: 15 ms
+Simulation completed
+Simulation Memory Usage: 9004 KB (Peak: 9004 KB)
+Simulation CPU Usage: 61 ms

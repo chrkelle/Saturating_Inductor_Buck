@@ -1,0 +1,14 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../Saturating_Inductor_Buck.srcs/sources_1/ip/clk_wiz_0" \
+"../../../../Saturating_Inductor_Buck.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v" \
+"../../../../Saturating_Inductor_Buck.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.v" \
+"../../../../Saturating_Inductor_Buck.srcs/sources_1/new/ADC_v1.v" \
+"../../../../Saturating_Inductor_Buck.srcs/sources_1/imports/Research/Buck_Control/Buck_Control.srcs/sources_1/new/DAC_AD9744.v" \
+"../../../../Saturating_Inductor_Buck.srcs/sources_1/imports/Research/Buck_Control/Buck_Control.srcs/sources_1/imports/Research/ADC_DAC/ADC_DAC.srcs/sources_1/new/sync_reg.v" \
+"../../../../Saturating_Inductor_Buck.srcs/sources_1/imports/new/ADC_DAC_test.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
