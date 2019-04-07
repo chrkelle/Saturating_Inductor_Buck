@@ -70,7 +70,7 @@ module ADC_DAC_range_test(sys_clk_p, sys_clk_n, reset, hi_muxsel, start, dco_p, 
     //module instantiation
     clk_wiz_0 clk_wiz(.clk_out1(clk), .clk_in1(sys_clk));
         
-    ADC adc(.clk(clk), .reset(reset), .dco(dco), .da(da),. db(db), .start(start_adc),
+    ADC_v1 adc(.clk(clk), .reset(reset), .dco(dco), .da(da),. db(db), .start(start_adc),
          .aclk(aclk), .cnv(cnv_p), .tp(tp), .tl(tl), .data(ADC_out), .adc_done(adc_done));
          
     DAC_AD9744 dac(.clk(clk), .start(adc_done), .reset(reset), .dacclk(dacclk), .dac_done(dac_done), .mode(mode));
@@ -80,7 +80,7 @@ module ADC_DAC_range_test(sys_clk_p, sys_clk_n, reset, hi_muxsel, start, dco_p, 
             ctrl_2_dac <= 0;
         end
         else begin
-            ctrl_2_dac <= {1'b1,ADC_out [15:3]};
+            ctrl_2_dac <= {1'b1,ADC_out [15:6]};
         end
     end
 endmodule

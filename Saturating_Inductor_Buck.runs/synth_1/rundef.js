@@ -23,7 +23,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log main.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source main.tcl" );
+         "-log ADC_DAC_range_test.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source ADC_DAC_range_test.tcl" );
 
 
 
