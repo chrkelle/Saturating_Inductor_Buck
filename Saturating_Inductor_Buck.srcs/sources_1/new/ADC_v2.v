@@ -22,9 +22,9 @@
 `define tcvnh 12 //was 6
 `define tconv 28 //was 23
 `define tfclk 32 //was 25
-`define acq   32
+`define acq   18
 
-module ADC (input  wire clk,
+module ADC_v2 (input  wire clk,
             input  wire reset,
             input  wire dco,
             input  wire da,
@@ -61,7 +61,7 @@ module ADC (input  wire clk,
                    
     assign x = dcop4 & ~dcop3;
     assign y = ~dcop4 & dcop3;
-    assign data = fdata[17:2];
+    assign data = {fdata[9:0],6'b000000};
                  
     always@* begin
                      

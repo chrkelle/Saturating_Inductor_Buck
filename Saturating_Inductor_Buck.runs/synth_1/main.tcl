@@ -32,7 +32,7 @@ set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
   C:/Users/Chris/Desktop/Research/Saturating_Inductor_Buck/Saturating_Inductor_Buck.srcs/sources_1/imports/Research/Buck_Control/Buck_Control.srcs/sources_1/imports/Research/ADC_Controller_DAC/ADC_Controller_DAC.srcs/sources_1/new/ACD.v
   C:/Users/Chris/Desktop/Research/Saturating_Inductor_Buck/Saturating_Inductor_Buck.srcs/sources_1/new/ADC_v1.v
-  C:/Users/Chris/Desktop/Research/Saturating_Inductor_Buck/Saturating_Inductor_Buck.srcs/sources_1/imports/Research/Buck_Control/Buck_Control.srcs/sources_1/new/DAC_AD9744.v
+  C:/Users/Chris/Desktop/Research/Saturating_Inductor_Buck/Saturating_Inductor_Buck.srcs/sources_1/new/DAC_AD9744_v1.v
   C:/Users/Chris/Desktop/Research/Saturating_Inductor_Buck/Saturating_Inductor_Buck.srcs/sources_1/imports/Research/Buck_Control/Buck_Control.srcs/sources_1/imports/Research/ADC_Controller_DAC/ADC_Controller_DAC.srcs/sources_1/new/controller.v
   C:/Users/Chris/Desktop/Research/Saturating_Inductor_Buck/Saturating_Inductor_Buck.srcs/sources_1/imports/Research/Buck_Control/Buck_Control.srcs/sources_1/new/cpu.v
   C:/Users/Chris/Desktop/Research/Saturating_Inductor_Buck/Saturating_Inductor_Buck.srcs/sources_1/imports/Research/Buck_Control/Buck_Control.srcs/sources_1/imports/Research/ADC_DAC/ADC_DAC.srcs/sources_1/new/debounce.v

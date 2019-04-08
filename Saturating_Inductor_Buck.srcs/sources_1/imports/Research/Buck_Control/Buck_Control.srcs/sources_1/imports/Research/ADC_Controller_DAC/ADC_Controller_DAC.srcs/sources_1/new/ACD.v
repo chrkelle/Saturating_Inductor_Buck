@@ -80,7 +80,7 @@ module ACD(clk, reset, hi_muxsel, start, step_up, ctrl_start, dco_p, dco_n,
     controller control(.clk(clk), .reset(reset), .step_up(step_up),.ADC_done(adc_done), .ADC_in(adc_2_ctrl), .i(i_out),
                  .control_done(control_done));
          
-    DAC_AD9744 dac(.clk(clk), .start(control_done), .reset(reset), .dacclk(dacclk), .dac_done(dac_done), .mode(mode));
+    DAC_AD9744_v1 dac(.clk(clk), .start(control_done), .reset(reset), .dacclk(dacclk), .dac_done(dac_done), .mode(mode));
     
     always @(posedge clk) begin
         if(reset) begin

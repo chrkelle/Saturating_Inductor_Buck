@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date         : Sun Apr  7 16:44:11 2019
+| Date         : Sun Apr  7 21:07:49 2019
 | Host         : DESKTOP-EPHBFNF running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file main_control_sets_placed.rpt
 | Design       : main
@@ -23,8 +23,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |    14 |
-| Unused register locations in slices containing registers |    62 |
+| Number of unique control sets                            |    15 |
+| Unused register locations in slices containing registers |    64 |
 +----------------------------------------------------------+-------+
 
 
@@ -35,8 +35,9 @@ Table of Contents
 | Fanout | Control Sets |
 +--------+--------------+
 |      1 |            2 |
+|      6 |            1 |
+|      8 |            1 |
 |     10 |            3 |
-|     12 |            1 |
 |     13 |            1 |
 |    16+ |            7 |
 +--------+--------------+
@@ -48,35 +49,36 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |             800 |          188 |
-| No           | No                    | Yes                    |             179 |           46 |
-| No           | Yes                   | No                     |             112 |           41 |
-| Yes          | No                    | No                     |              12 |            2 |
-| Yes          | No                    | Yes                    |              42 |            7 |
-| Yes          | Yes                   | No                     |              25 |            7 |
+| No           | No                    | No                     |             766 |          190 |
+| No           | No                    | Yes                    |             177 |           47 |
+| No           | Yes                   | No                     |             112 |           37 |
+| Yes          | No                    | No                     |               8 |            1 |
+| Yes          | No                    | Yes                    |              48 |           11 |
+| Yes          | Yes                   | No                     |              25 |           10 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+----------------------+-------------------------------+----------------------------+------------------+----------------+
-|     Clock Signal     |         Enable Signal         |      Set/Reset Signal      | Slice Load Count | Bel Load Count |
-+----------------------+-------------------------------+----------------------------+------------------+----------------+
-|  inst0/inst/clk_out1 | cpu_inst/sw_on_i_1_n_0        | debounce_inst2/SR[0]       |                1 |              1 |
-|  inst0/inst/clk_out1 | acd_inst/adc/n_cnv            | debounce_inst2/SR[0]       |                1 |              1 |
-|  inst0/inst/clk_out1 |                               | cpu_inst/cntr_load_reg_n_0 |                3 |             10 |
-|  inst0/inst/clk_out1 | acd_inst/control/wr_i_en      | debounce_inst2/SR[0]       |                2 |             10 |
-|  inst0/inst/clk_out1 | acd_inst/adc/adc_done         | debounce_inst2/SR[0]       |                2 |             10 |
-|  inst0/inst/clk_out1 | acd_inst/adc/sync/E[0]        |                            |                2 |             12 |
-|  inst0/inst/clk_out1 | acd_inst/control/control_done | debounce_inst2/SR[0]       |                3 |             13 |
-|  inst0/inst/clk_out1 |                               | debounce_inst1/PB_idle     |                7 |             25 |
-|  inst0/inst/clk_out1 |                               | debounce_inst2/PB_idle     |                7 |             25 |
-|  inst0/inst/clk_out1 |                               | debounce_inste/PB_idle     |                7 |             25 |
-|  pipe_clk_BUFG       | acd_inst/control/s2s3_wr_i_en | debounce_inst2/SR[0]       |                5 |             32 |
-|  inst0/inst/clk_out1 |                               | debounce_inst2/SR[0]       |               29 |             48 |
-|  pipe_clk_BUFG       |                               | debounce_inst2/SR[0]       |               34 |            158 |
-|  inst0/inst/clk_out1 |                               |                            |              190 |            803 |
-+----------------------+-------------------------------+----------------------------+------------------+----------------+
++----------------------+------------------------------------------+----------------------------+------------------+----------------+
+|     Clock Signal     |               Enable Signal              |      Set/Reset Signal      | Slice Load Count | Bel Load Count |
++----------------------+------------------------------------------+----------------------------+------------------+----------------+
+|  inst0/inst/clk_out1 | acd_inst/adc/n_cnv                       | debounce_inst2/SR[0]       |                1 |              1 |
+|  inst0/inst/clk_out1 | cpu_inst/sw_on_i_1_n_0                   | debounce_inst2/SR[0]       |                1 |              1 |
+|  inst0/inst/clk_out1 | acd_inst/dac/FSM_onehot_state[5]_i_1_n_0 | debounce_inst2/SR[0]       |                1 |              6 |
+|  inst0/inst/clk_out1 | acd_inst/adc/sync/E[0]                   |                            |                1 |              8 |
+|  inst0/inst/clk_out1 |                                          | cpu_inst/cntr_load_reg_n_0 |                3 |             10 |
+|  inst0/inst/clk_out1 | acd_inst/adc/adc_done                    | debounce_inst2/SR[0]       |                4 |             10 |
+|  inst0/inst/clk_out1 | acd_inst/control/wr_i_en                 | debounce_inst2/SR[0]       |                3 |             10 |
+|  inst0/inst/clk_out1 | acd_inst/control/control_done            | debounce_inst2/SR[0]       |                4 |             13 |
+|  inst0/inst/clk_out1 |                                          | debounce_inst1/PB_idle     |                7 |             25 |
+|  inst0/inst/clk_out1 |                                          | debounce_inst2/PB_idle     |                7 |             25 |
+|  inst0/inst/clk_out1 |                                          | debounce_inste/PB_idle     |                7 |             25 |
+|  pipe_clk_BUFG       | acd_inst/control/s2s3_wr_i_en            | debounce_inst2/SR[0]       |                7 |             32 |
+|  inst0/inst/clk_out1 |                                          | debounce_inst2/SR[0]       |               24 |             47 |
+|  pipe_clk_BUFG       |                                          | debounce_inst2/SR[0]       |               36 |            157 |
+|  inst0/inst/clk_out1 |                                          |                            |              192 |            769 |
++----------------------+------------------------------------------+----------------------------+------------------+----------------+
 
 
