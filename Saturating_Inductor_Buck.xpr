@@ -216,7 +216,6 @@
       <File Path="$PSRCDIR/sources_1/imports/Research/Buck_Control/Buck_Control.srcs/sources_1/new/DAC_AD9744.v">
         <FileInfo>
           <Attr Name="UserDisabled" Val="1"/>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../Buck_Control/Buck_Control.srcs/sources_1/new/DAC_AD9744.v"/>
           <Attr Name="ImportTime" Val="1553190962"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -227,7 +226,6 @@
       <File Path="$PSRCDIR/sources_1/new/ADC_v2.v">
         <FileInfo>
           <Attr Name="UserDisabled" Val="1"/>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -376,7 +374,6 @@
       <File Path="$PSRCDIR/sources_1/imports/Research/Buck_Control/Buck_Control.srcs/sources_1/imports/Research/ADC_DAC/ADC_DAC.srcs/sources_1/new/ADC.v">
         <FileInfo>
           <Attr Name="UserDisabled" Val="1"/>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../Buck_Control/Buck_Control.srcs/sources_1/imports/Research/ADC_DAC/ADC_DAC.srcs/sources_1/new/ADC.v"/>
           <Attr Name="ImportTime" Val="1529258268"/>
           <Attr Name="UsedIn" Val="synthesis"/>
