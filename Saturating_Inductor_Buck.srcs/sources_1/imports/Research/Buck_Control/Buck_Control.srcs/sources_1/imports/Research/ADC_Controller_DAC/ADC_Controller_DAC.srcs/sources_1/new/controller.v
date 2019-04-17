@@ -78,7 +78,7 @@ module controller(clk, reset, step_up, ADC_done, ADC_in, i, control_done);
     reg signed [15:0] ADC;
     wire signed [15:0] ADC_error;
     wire signed [15:0] ADC_ref;
-    assign ADC_ref = step_up ? 250 : 188; //(1.8V)
+    assign ADC_ref = step_up ? 225 : 125; //(1.8V)
     //output reg signed [31:0] p_error;
     
     //s0 outputs    
