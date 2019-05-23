@@ -34,7 +34,7 @@ module controller(clk, reset, step_up, ADC_done, ADC_in, i, control_done);
     //internal wires
     wire sys_clk;
     wire signed [31:0] i_max = 8000000;
-    wire signed [31:0] i_min = 10240;
+    wire signed [31:0] i_min = -8000000;
     
     //state machine
     reg [2:0] state, n_state;
@@ -78,7 +78,7 @@ module controller(clk, reset, step_up, ADC_done, ADC_in, i, control_done);
     reg signed [15:0] ADC;
     wire signed [15:0] ADC_error;
     wire signed [15:0] ADC_ref;
-    assign ADC_ref = step_up ? 225 : 125; //(1.8V)
+    assign ADC_ref = step_up ? 225 : 125; //(1.8V ? 1V?
     //output reg signed [31:0] p_error;
     
     //s0 outputs    

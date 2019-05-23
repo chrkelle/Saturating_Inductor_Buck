@@ -40,6 +40,8 @@ module ACD(clk, reset, hi_muxsel, start, step_up, ctrl_start, dco_p, dco_n,
     output reg [13:0] ctrl_2_dac;
     //controller outputs
     wire [31:0] i_out;
+    wire [13:0] i_mid;
+    wire [13:0] i_conv;
     wire control_done;
     //dac outputs
     output wire dacclk, mode;
@@ -79,8 +81,11 @@ module ACD(clk, reset, hi_muxsel, start, step_up, ctrl_start, dco_p, dco_n,
          
     controller control(.clk(clk), .reset(reset), .step_up(step_up),.ADC_done(adc_done), .ADC_in(adc_2_ctrl), .i(i_out),
                  .control_done(control_done));
-         
-    DAC_AD9744 dac(.clk(clk), .start(control_done), .reset(reset), .dacclk(dacclk), .dac_done(dac_done), .mode(mode));
+    /* add by Xiaofan 190522*/             
+    assign i_mid = i_out >>> 10;
+    assign i_conv = i_mid ^ 14'b10_0000_0000;
+                                      
+    DAC_AD9744 dac(.clk(clk), .start(convert_done), .reset(reset), .dacclk(dacclk), .dac_done(dac_done), .mode(mode));
     
     always @(posedge clk) begin
         if(reset) begin
@@ -91,7 +96,7 @@ module ACD(clk, reset, hi_muxsel, start, step_up, ctrl_start, dco_p, dco_n,
         end
     end
     
-    
+/*Commented by XC*/        
     always @(posedge clk) begin
         if(reset) begin
             ctrl_2_dac <= 8192;
@@ -100,7 +105,7 @@ module ACD(clk, reset, hi_muxsel, start, step_up, ctrl_start, dco_p, dco_n,
         //    ctrl_2_dac <= 8192;  
         //end
         else if(control_done) begin
-            ctrl_2_dac <= {1'b1,i_out[22:10]};
+            ctrl_2_dac <= i_conv;
         end
         
     end
