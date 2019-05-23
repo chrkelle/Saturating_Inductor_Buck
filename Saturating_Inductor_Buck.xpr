@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="36" Path="C:/Users/Chris/Desktop/Research/Saturating_Inductor_Buck/Saturating_Inductor_Buck.xpr">
+<Project Version="7" Minor="36" Path="C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="4d0e161b37964832a5413117ce072d1c"/>
