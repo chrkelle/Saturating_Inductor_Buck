@@ -1,4 +1,4 @@
-//`timescale 1ns / 1ps
+`timescale 10ns / 1ps
 ////////////////////////////////////////////////////////////////////////////////////
 //// Company: 
 //// Engineer: 
@@ -46,5 +46,30 @@
 //        .done(ctrl_ready_flg), .mode(mode)); 
         
 //        always()
-
+module calculation_tb (i_out_t, i_mid, i_conv);
+    
+    reg[31:0] i_out;
+    reg clk;
+    output wire[13:0] i_mid;
+    output wire[31:0] i_out_t;
+    output wire[13:0] i_conv;
+    
+    calculation_test calculation_test(.i_out(i_out),.i_mid(i_mid),.i_conv(i_conv));
+    
+    assign i_out_t = 1;
+    
+   initial begin
+       clk = 0;
+       i_out = 0;
+       forever #10 clk = ~clk; // generate a clock
+   end
+    
+//    always @(*) begin
+//        #10 clk = ~clk;
+//    end
+    
+    always @(posedge clk) begin
+        i_out <= i_out - 30000;
+    end
+endmodule
 //endmodule

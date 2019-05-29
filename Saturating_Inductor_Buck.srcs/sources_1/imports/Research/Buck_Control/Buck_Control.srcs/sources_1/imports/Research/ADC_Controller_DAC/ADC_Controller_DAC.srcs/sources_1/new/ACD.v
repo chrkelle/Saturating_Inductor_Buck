@@ -82,8 +82,8 @@ module ACD(clk, reset, hi_muxsel, start, step_up, ctrl_start, dco_p, dco_n,
     controller control(.clk(clk), .reset(reset), .step_up(step_up),.ADC_done(adc_done), .ADC_in(adc_2_ctrl), .i(i_out),
                  .control_done(control_done));
     /* add by Xiaofan 190522*/             
-    assign i_mid = i_out >>> 10;
-    assign i_conv = i_mid ^ 14'b10_0000_0000;
+  assign i_mid = i_out >>> 10;
+  assign i_conv = i_mid ^ 14'b10_0000_0000_0000;
                                       
     DAC_AD9744 dac(.clk(clk), .start(convert_done), .reset(reset), .dacclk(dacclk), .dac_done(dac_done), .mode(mode));
     
