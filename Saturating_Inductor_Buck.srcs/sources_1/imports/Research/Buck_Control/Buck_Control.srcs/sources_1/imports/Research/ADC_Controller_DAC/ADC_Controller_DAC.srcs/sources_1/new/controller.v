@@ -58,7 +58,7 @@ module controller(clk, reset, step_up, ADC_done, ADC_in, i, control_done);
     reg s1s2_wr_i_en;
     wire signed [31:0] p_i, kp;
     assign p_i = i;
-    assign kp = step_up ? 14150 : 0;
+    assign kp = step_up ? 8844 : 0;
     
     //s2 outputs
     wire signed [31:0] s2_prop_e, s2_part_sum;
@@ -68,7 +68,7 @@ module controller(clk, reset, step_up, ADC_done, ADC_in, i, control_done);
     reg signed [15:0] s0s1_p_error;
     wire signed [31:0] ki;
     reg s0s1_wr_i_en;
-    assign ki = step_up ? 159 : 10;
+    assign ki = step_up ? 100 : 10;
     
     //s1 outputs
     wire signed [15:0] s1_delta_e;
@@ -78,7 +78,7 @@ module controller(clk, reset, step_up, ADC_done, ADC_in, i, control_done);
     reg signed [15:0] ADC;
     wire signed [15:0] ADC_error;
     wire signed [15:0] ADC_ref;
-    assign ADC_ref = step_up ? 64 : 192; //(0.5V) : 1.5V
+    assign ADC_ref = step_up ? 128 : 320; //(1V) : 2.5V
     //output reg signed [31:0] p_error;
     
     //s0 outputs    
