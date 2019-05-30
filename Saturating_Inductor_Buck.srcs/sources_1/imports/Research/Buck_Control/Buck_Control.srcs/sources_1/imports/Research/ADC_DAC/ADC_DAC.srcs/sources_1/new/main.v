@@ -64,7 +64,7 @@ aclk_p, aclk_n, cnv_p, cnv_n, tp, tl, clk, mode, step_up_FF, state_1);
     output reg step_up_FF;
     
     assign hi_muxsel = 0;
-    assign ctrl_2_dac[13] = 1;
+    //assign ctrl_2_dac[13] = 1;
     
     IBUFDS #(.DIFF_TERM("FALSE"), .IBUF_LOW_PWR("FALSE"), .IOSTANDARD("LVDS_25")) 
     IBUFDS_inst0 (.O(clk_in), .I(sys_clk_p), .IB(sys_clk_n));
