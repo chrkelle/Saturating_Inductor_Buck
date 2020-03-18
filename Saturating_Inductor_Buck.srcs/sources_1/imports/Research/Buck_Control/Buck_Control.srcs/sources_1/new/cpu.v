@@ -201,17 +201,19 @@ assign state_1 = (state == s5 | state == s6);
       
       s6 : begin   // valley current detection
         //FF_clear <= 1'b0;
-        cntr_load <= 1'b1;
+          cntr_load <= 1'b1;
+// we enable the valley current detection
         if (sat_flg)  
             state <= s0;
         else
             state<=s6;
+// we disable the valley current detection
+//            state<=s0;
  // edge detection       
 //        if (sat_flg || comp_edge)     
 //          cntr_load <= 1'b1;
 //        else
 //          cntr_load <= 1'b0;  
-
       end   
        
              
