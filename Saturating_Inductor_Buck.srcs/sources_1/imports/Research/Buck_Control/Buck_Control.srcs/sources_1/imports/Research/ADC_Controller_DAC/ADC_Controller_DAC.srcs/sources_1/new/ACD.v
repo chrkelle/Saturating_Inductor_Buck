@@ -55,6 +55,8 @@ module ACD(clk, reset, hi_muxsel, start, step_up, ctrl_start, dco_p, dco_n,
     //dac wires
     wire dac_done;
     
+    reg [15:0] ctrl_2_dac_buff;
+    
     assign hi_muxsel = 0;
     assign done = dac_done;
     assign start_adc = (start & ~cold_start_p) || ctrl_start;
@@ -96,17 +98,27 @@ module ACD(clk, reset, hi_muxsel, start, step_up, ctrl_start, dco_p, dco_n,
     
     always @(posedge clk) begin
         if(reset) begin
-            ctrl_2_dac <= 8192;
+            ctrl_2_dac_buff <= 8192;
         end
         //else if(~start) begin
         //    ctrl_2_dac <= 8192;  
         //end
         else if (control_done) begin
             // ctrl_2_dac <= i_mid ^ 14'b10_0000_0000_0000;
-             ctrl_2_dac <= 14'b10_0010_0000_0000;
+             ctrl_2_dac_buff <= 14'b10_0100_0000_0000;
              end 
-        end
-
+     end
+     
+     always @(posedge clk) begin
+                if(reset) begin
+                    ctrl_2_dac <= 8192;
+                end
+                else begin
+                     ctrl_2_dac <= ctrl_2_dac_buff;
+                     end 
+       end
+             
+     
 
     
     always @(posedge clk) begin
