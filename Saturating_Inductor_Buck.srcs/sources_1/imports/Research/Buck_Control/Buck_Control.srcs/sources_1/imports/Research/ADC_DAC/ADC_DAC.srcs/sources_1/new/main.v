@@ -94,7 +94,7 @@ aclk_p, aclk_n, cnv_p, cnv_n, tp, tl, clk, mode, step_up_FF, state_1);
     ACD acd_inst(.clk(clk), .reset(reset), .start(startup_FF), .step_up(step_up_FF), .ctrl_start(ctrl_start), .dco_p(dco_p), .dco_n(dco_n)
     ,.da_p(da_p), .da_n(da_n), .db_p(db_p), .db_n(db_n),.aclk_p(aclk_p), .aclk_n(aclk_n), 
     .cnv_p(cnv_p), .cnv_n(cnv_n), .tp(tp), .tl(tl), .ctrl_2_dac(ctrl_2_dac), .dacclk(dacclk), 
-    .done(ctrl_ready_flg), .mode(mode));   
+    .done(ctrl_ready_flg), .sw_on(sw_on),.mode(mode));   
     
     always @(posedge clk) begin
         if(reset)

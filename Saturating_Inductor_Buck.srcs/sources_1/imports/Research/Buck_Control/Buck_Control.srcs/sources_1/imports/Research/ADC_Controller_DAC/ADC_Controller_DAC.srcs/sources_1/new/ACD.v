@@ -22,10 +22,10 @@
 
 module ACD(clk, reset, hi_muxsel, start, step_up, ctrl_start, dco_p, dco_n, 
            da_p, da_n, db_p, db_n, aclk_p, aclk_n, cnv_p, cnv_n, 
-           tp, tl, dacclk, ctrl_2_dac, done, mode);
+           tp, tl, dacclk, ctrl_2_dac, done, sw_on, mode);
     
     //system inputs
-    input wire clk, reset, start, step_up, ctrl_start;
+    input wire clk, reset, start, step_up, ctrl_start, sw_on;
     //adc inputs
     input wire dco_p, dco_n, da_p, da_n, db_p, db_n;
     reg cold_start, cold_start_p;
@@ -56,12 +56,15 @@ module ACD(clk, reset, hi_muxsel, start, step_up, ctrl_start, dco_p, dco_n,
     wire dac_done;
     
     reg [15:0] ctrl_2_dac_buff;
+    wire [16:0] sc_cntr;
+    wire [13:0] sc_cntr_mid;
     
     assign hi_muxsel = 0;
     assign done = dac_done;
     assign start_adc = (start & ~cold_start_p) || ctrl_start;
     assign cnv_n = 0;
     assign i_mid = i_out>>>10;
+    assign sc_cntr_mid = sc_cntr>>>3;
     
     //buffers
     
@@ -86,6 +89,8 @@ module ACD(clk, reset, hi_muxsel, start, step_up, ctrl_start, dco_p, dco_n,
          
     DAC_AD9744 dac(.clk(clk), .start(1), .reset(reset), .dacclk(dacclk), .dac_done(dac_done), .mode(mode));
     
+    sc_counter sc_counter_inst(.CLK(clk),.SINIT(sw_on),.Q(sc_cntr));
+    
     always @(posedge clk) begin
         if(reset) begin
             adc_2_ctrl <= 0;
@@ -105,17 +110,17 @@ module ACD(clk, reset, hi_muxsel, start, step_up, ctrl_start, dco_p, dco_n,
         //end
         else if (control_done) begin
             // ctrl_2_dac <= i_mid ^ 14'b10_0000_0000_0000;
-             ctrl_2_dac_buff <= 14'b10_0100_0000_0000;
+             ctrl_2_dac_buff <= 14'b10_0000_0000_0001;
              end 
      end
      
-     always @(posedge clk) begin
+      always @(posedge clk) begin
                 if(reset) begin
                     ctrl_2_dac <= 8192;
                 end
                 else begin
-                     ctrl_2_dac <= ctrl_2_dac_buff;
-                     end 
+                     ctrl_2_dac <= ctrl_2_dac_buff + sc_cntr_mid;
+                end  
        end
              
      

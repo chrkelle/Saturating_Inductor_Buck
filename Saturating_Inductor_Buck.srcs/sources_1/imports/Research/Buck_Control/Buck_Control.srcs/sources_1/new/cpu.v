@@ -19,7 +19,7 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 module cpu
-# (localparam adc_delay = 1,on_time = 80,sw_off_delay= 135, sw_off_clear= 135, preset_delay = 4)
+# (localparam adc_delay = 1,on_time = 80,sw_off_delay= 200, sw_off_clear= 200, preset_delay = 4)
 (
 input wire clk,rst,
 input wire comp_edge, sat_flg,
@@ -152,7 +152,7 @@ assign state_1 = (state == s5 | state == s6);
         else          
             state<=s3;
                                 
-        sw_on <= 0;		
+        sw_on <= 0;	
         if (ctrl_ready_flg & ~ctrl_ready_flg_p)
             ctrl_ready_detect <= 1'b1;  
         else 
@@ -186,7 +186,7 @@ assign state_1 = (state == s5 | state == s6);
       
       s4_5 : begin
                 state <= s0;
-                cntr_load <= 1;
+                cntr_load <= 1'b1;
              end
              
       s5: begin
@@ -206,7 +206,7 @@ assign state_1 = (state == s5 | state == s6);
         if (sat_flg)  
             state <= s0;
         else
-            state<=s6;
+            state <= s6;
 // we disable the valley current detection
 //            state<=s0;
  // edge detection       

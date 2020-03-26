@@ -20,9 +20,9 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-`define t_ds 4 //was 4
-`define clk_high 3 //was 3
-`define settle 5 //was 5
+`define t_ds 1 //was 4
+`define clk_high 1 //was 3
+`define settle 1 //was 5
 
 module DAC_AD9744(clk, start, reset, dacclk, dac_done, mode);
     

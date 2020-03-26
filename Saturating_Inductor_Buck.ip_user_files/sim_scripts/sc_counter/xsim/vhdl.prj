@@ -1,0 +1,4 @@
+vhdl xil_defaultlib  \
+"../../../../Saturating_Inductor_Buck.srcs/sources_1/ip/sc_counter/sim/sc_counter.vhd" \
+
+nosort

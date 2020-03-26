@@ -2,8 +2,8 @@
 # Vivado v2018.1 (64-bit)
 # SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
 # IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
-# Start of session at: Sat Mar 21 17:05:24 2020
-# Process ID: 21472
+# Start of session at: Thu Mar 26 13:28:22 2020
+# Process ID: 26004
 # Current directory: C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.runs/synth_1
 # Command line: vivado.exe -log main.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source main.tcl
 # Log file: C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.runs/synth_1/main.vds
@@ -15,9 +15,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a50t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a50t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 10300 
+INFO: Helper process launched with PID 25972 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 445.852 ; gain = 100.527
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 446.281 ; gain = 100.992
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'main' [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.srcs/sources_1/imports/Research/Buck_Control/Buck_Control.srcs/sources_1/imports/Research/ADC_DAC/ADC_DAC.srcs/sources_1/new/main.v:23]
 INFO: [Synth 8-6157] synthesizing module 'IBUFDS' [C:/Xilinx/Vivado/2018.1/scripts/rt/data/unisim_comp.v:19487]
@@ -29,16 +29,16 @@ INFO: [Synth 8-6157] synthesizing module 'IBUFDS' [C:/Xilinx/Vivado/2018.1/scrip
 	Parameter IFD_DELAY_VALUE bound to: AUTO - type: string 
 	Parameter IOSTANDARD bound to: LVDS_25 - type: string 
 INFO: [Synth 8-6155] done synthesizing module 'IBUFDS' (1#1) [C:/Xilinx/Vivado/2018.1/scripts/rt/data/unisim_comp.v:19487]
-INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.runs/synth_1/.Xil/Vivado-21472-EECS-Xiaomachine/realtime/clk_wiz_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (2#1) [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.runs/synth_1/.Xil/Vivado-21472-EECS-Xiaomachine/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.runs/synth_1/.Xil/Vivado-26004-EECS-Xiaomachine/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (2#1) [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.runs/synth_1/.Xil/Vivado-26004-EECS-Xiaomachine/realtime/clk_wiz_0_stub.v:5]
 INFO: [Synth 8-6157] synthesizing module 'debounce' [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.srcs/sources_1/imports/Research/Buck_Control/Buck_Control.srcs/sources_1/imports/Research/ADC_DAC/ADC_DAC.srcs/sources_1/new/debounce.v:23]
 	Parameter DELAY bound to: 24'b000000000000001111101000 
 INFO: [Synth 8-6155] done synthesizing module 'debounce' (3#1) [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.srcs/sources_1/imports/Research/Buck_Control/Buck_Control.srcs/sources_1/imports/Research/ADC_DAC/ADC_DAC.srcs/sources_1/new/debounce.v:23]
 INFO: [Synth 8-6157] synthesizing module 'cpu' [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.srcs/sources_1/imports/Research/Buck_Control/Buck_Control.srcs/sources_1/new/cpu.v:21]
 	Parameter adc_delay bound to: 1 - type: integer 
 	Parameter on_time bound to: 80 - type: integer 
-	Parameter sw_off_delay bound to: 135 - type: integer 
-	Parameter sw_off_clear bound to: 135 - type: integer 
+	Parameter sw_off_delay bound to: 200 - type: integer 
+	Parameter sw_off_clear bound to: 200 - type: integer 
 	Parameter preset_delay bound to: 4 - type: integer 
 	Parameter s0 bound to: 10'b0000000001 
 	Parameter s1 bound to: 10'b0000000010 
@@ -49,8 +49,8 @@ INFO: [Synth 8-6157] synthesizing module 'cpu' [C:/Users/cuixf/Documents/GitHub/
 	Parameter s5 bound to: 10'b0001000000 
 	Parameter s6 bound to: 10'b0010000000 
 INFO: [Synth 8-5534] Detected attribute (* FSM_ENCODING = "ONE-HOT" *) [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.srcs/sources_1/imports/Research/Buck_Control/Buck_Control.srcs/sources_1/new/cpu.v:44]
-INFO: [Synth 8-6157] synthesizing module 'on_time_counter' [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.runs/synth_1/.Xil/Vivado-21472-EECS-Xiaomachine/realtime/on_time_counter_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'on_time_counter' (4#1) [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.runs/synth_1/.Xil/Vivado-21472-EECS-Xiaomachine/realtime/on_time_counter_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'on_time_counter' [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.runs/synth_1/.Xil/Vivado-26004-EECS-Xiaomachine/realtime/on_time_counter_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'on_time_counter' (4#1) [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.runs/synth_1/.Xil/Vivado-26004-EECS-Xiaomachine/realtime/on_time_counter_stub.v:6]
 WARNING: [Synth 8-6014] Unused sequential element comp_edge_p_reg was removed.  [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.srcs/sources_1/imports/Research/Buck_Control/Buck_Control.srcs/sources_1/new/cpu.v:79]
 WARNING: [Synth 8-6014] Unused sequential element FF_clear_reg_reg was removed.  [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.srcs/sources_1/imports/Research/Buck_Control/Buck_Control.srcs/sources_1/new/cpu.v:88]
 INFO: [Synth 8-6155] done synthesizing module 'cpu' (5#1) [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.srcs/sources_1/imports/Research/Buck_Control/Buck_Control.srcs/sources_1/new/cpu.v:21]
@@ -70,18 +70,18 @@ INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/cuix
 INFO: [Synth 8-6155] done synthesizing module 'ADC' (8#1) [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.srcs/sources_1/imports/Research/Buck_Control/Buck_Control.srcs/sources_1/imports/Research/ADC_DAC/ADC_DAC.srcs/sources_1/new/ADC.v:27]
 INFO: [Synth 8-6157] synthesizing module 'controller' [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.srcs/sources_1/imports/Research/Buck_Control/Buck_Control.srcs/sources_1/imports/Research/ADC_Controller_DAC/ADC_Controller_DAC.srcs/sources_1/new/controller.v:23]
 INFO: [Synth 8-6157] synthesizing module 'stage0' [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.srcs/sources_1/imports/Research/Buck_Control/Buck_Control.srcs/sources_1/imports/Research/ADC_Controller_DAC/ADC_Controller_DAC.srcs/sources_1/new/stage0.v:23]
-INFO: [Synth 8-6157] synthesizing module 'c_addsub_2' [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.runs/synth_1/.Xil/Vivado-21472-EECS-Xiaomachine/realtime/c_addsub_2_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'c_addsub_2' (9#1) [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.runs/synth_1/.Xil/Vivado-21472-EECS-Xiaomachine/realtime/c_addsub_2_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'c_addsub_2' [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.runs/synth_1/.Xil/Vivado-26004-EECS-Xiaomachine/realtime/c_addsub_2_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'c_addsub_2' (9#1) [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.runs/synth_1/.Xil/Vivado-26004-EECS-Xiaomachine/realtime/c_addsub_2_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'stage0' (10#1) [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.srcs/sources_1/imports/Research/Buck_Control/Buck_Control.srcs/sources_1/imports/Research/ADC_Controller_DAC/ADC_Controller_DAC.srcs/sources_1/new/stage0.v:23]
 INFO: [Synth 8-6157] synthesizing module 'stage1' [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.srcs/sources_1/imports/Research/Buck_Control/Buck_Control.srcs/sources_1/imports/Research/ADC_Controller_DAC/ADC_Controller_DAC.srcs/sources_1/new/stage1.v:22]
-INFO: [Synth 8-6157] synthesizing module 'c_addsub_0' [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.runs/synth_1/.Xil/Vivado-21472-EECS-Xiaomachine/realtime/c_addsub_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'c_addsub_0' (11#1) [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.runs/synth_1/.Xil/Vivado-21472-EECS-Xiaomachine/realtime/c_addsub_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'mult_gen_0' [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.runs/synth_1/.Xil/Vivado-21472-EECS-Xiaomachine/realtime/mult_gen_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'mult_gen_0' (12#1) [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.runs/synth_1/.Xil/Vivado-21472-EECS-Xiaomachine/realtime/mult_gen_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'c_addsub_0' [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.runs/synth_1/.Xil/Vivado-26004-EECS-Xiaomachine/realtime/c_addsub_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'c_addsub_0' (11#1) [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.runs/synth_1/.Xil/Vivado-26004-EECS-Xiaomachine/realtime/c_addsub_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'mult_gen_0' [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.runs/synth_1/.Xil/Vivado-26004-EECS-Xiaomachine/realtime/mult_gen_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'mult_gen_0' (12#1) [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.runs/synth_1/.Xil/Vivado-26004-EECS-Xiaomachine/realtime/mult_gen_0_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'stage1' (13#1) [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.srcs/sources_1/imports/Research/Buck_Control/Buck_Control.srcs/sources_1/imports/Research/ADC_Controller_DAC/ADC_Controller_DAC.srcs/sources_1/new/stage1.v:22]
 INFO: [Synth 8-6157] synthesizing module 'stage2' [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.srcs/sources_1/imports/Research/Buck_Control/Buck_Control.srcs/sources_1/imports/Research/ADC_Controller_DAC/ADC_Controller_DAC.srcs/sources_1/new/stage2.v:23]
-INFO: [Synth 8-6157] synthesizing module 'c_addsub_1' [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.runs/synth_1/.Xil/Vivado-21472-EECS-Xiaomachine/realtime/c_addsub_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'c_addsub_1' (14#1) [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.runs/synth_1/.Xil/Vivado-21472-EECS-Xiaomachine/realtime/c_addsub_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'c_addsub_1' [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.runs/synth_1/.Xil/Vivado-26004-EECS-Xiaomachine/realtime/c_addsub_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'c_addsub_1' (14#1) [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.runs/synth_1/.Xil/Vivado-26004-EECS-Xiaomachine/realtime/c_addsub_1_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'stage2' (15#1) [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.srcs/sources_1/imports/Research/Buck_Control/Buck_Control.srcs/sources_1/imports/Research/ADC_Controller_DAC/ADC_Controller_DAC.srcs/sources_1/new/stage2.v:23]
 INFO: [Synth 8-6157] synthesizing module 'stage3' [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.srcs/sources_1/imports/Research/Buck_Control/Buck_Control.srcs/sources_1/imports/Research/ADC_Controller_DAC/ADC_Controller_DAC.srcs/sources_1/new/stage3.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'stage3' (16#1) [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.srcs/sources_1/imports/Research/Buck_Control/Buck_Control.srcs/sources_1/imports/Research/ADC_Controller_DAC/ADC_Controller_DAC.srcs/sources_1/new/stage3.v:23]
@@ -90,13 +90,15 @@ INFO: [Synth 8-6155] done synthesizing module 'controller' (17#1) [C:/Users/cuix
 INFO: [Synth 8-6157] synthesizing module 'DAC_AD9744' [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.srcs/sources_1/imports/Research/Buck_Control/Buck_Control.srcs/sources_1/new/DAC_AD9744.v:27]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.srcs/sources_1/imports/Research/Buck_Control/Buck_Control.srcs/sources_1/new/DAC_AD9744.v:47]
 INFO: [Synth 8-6155] done synthesizing module 'DAC_AD9744' (18#1) [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.srcs/sources_1/imports/Research/Buck_Control/Buck_Control.srcs/sources_1/new/DAC_AD9744.v:27]
-INFO: [Synth 8-6155] done synthesizing module 'ACD' (19#1) [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.srcs/sources_1/imports/Research/Buck_Control/Buck_Control.srcs/sources_1/imports/Research/ADC_Controller_DAC/ADC_Controller_DAC.srcs/sources_1/new/ACD.v:23]
-WARNING: [Synth 8-350] instance 'acd_inst' of module 'ACD' requires 22 connections, but only 21 given [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.srcs/sources_1/imports/Research/Buck_Control/Buck_Control.srcs/sources_1/imports/Research/ADC_DAC/ADC_DAC.srcs/sources_1/new/main.v:94]
-INFO: [Synth 8-6155] done synthesizing module 'main' (20#1) [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.srcs/sources_1/imports/Research/Buck_Control/Buck_Control.srcs/sources_1/imports/Research/ADC_DAC/ADC_DAC.srcs/sources_1/new/main.v:23]
+INFO: [Synth 8-6157] synthesizing module 'sc_counter' [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.runs/synth_1/.Xil/Vivado-26004-EECS-Xiaomachine/realtime/sc_counter_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'sc_counter' (19#1) [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.runs/synth_1/.Xil/Vivado-26004-EECS-Xiaomachine/realtime/sc_counter_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ACD' (20#1) [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.srcs/sources_1/imports/Research/Buck_Control/Buck_Control.srcs/sources_1/imports/Research/ADC_Controller_DAC/ADC_Controller_DAC.srcs/sources_1/new/ACD.v:23]
+WARNING: [Synth 8-350] instance 'acd_inst' of module 'ACD' requires 23 connections, but only 22 given [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.srcs/sources_1/imports/Research/Buck_Control/Buck_Control.srcs/sources_1/imports/Research/ADC_DAC/ADC_DAC.srcs/sources_1/new/main.v:94]
+INFO: [Synth 8-6155] done synthesizing module 'main' (21#1) [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.srcs/sources_1/imports/Research/Buck_Control/Buck_Control.srcs/sources_1/imports/Research/ADC_DAC/ADC_DAC.srcs/sources_1/new/main.v:23]
 WARNING: [Synth 8-3917] design main has port hi_muxsel driven by constant 0
 WARNING: [Synth 8-3331] design cpu has unconnected port comp_edge
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 500.563 ; gain = 155.238
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 501.371 ; gain = 156.082
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -109,10 +111,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 500.563 ; gain = 155.238
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 501.371 ; gain = 156.082
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 500.563 ; gain = 155.238
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 501.371 ; gain = 156.082
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 5 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -137,6 +139,8 @@ Parsing XDC File [c:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Satur
 Finished Parsing XDC File [c:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.srcs/sources_1/ip/on_time_counter/on_time_counter/c_counter_binary_0_in_context.xdc] for cell 'cpu_inst/on_time_counter_inst'
 Parsing XDC File [c:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'inst0'
 Finished Parsing XDC File [c:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'inst0'
+Parsing XDC File [c:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.srcs/sources_1/ip/sc_counter/sc_counter/sc_counter_in_context.xdc] for cell 'acd_inst/sc_counter_inst'
+Finished Parsing XDC File [c:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.srcs/sources_1/ip/sc_counter/sc_counter/sc_counter_in_context.xdc] for cell 'acd_inst/sc_counter_inst'
 Parsing XDC File [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.srcs/constrs_1/imports/ADC_Controller_DAC/xem7010.xdc]
 WARNING: [Vivado 12-584] No ports matched 'hi_in[0]'. [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.srcs/constrs_1/imports/ADC_Controller_DAC/xem7010.xdc:21]
 WARNING: [Vivado 12-584] No ports matched 'hi_in[1]'. [C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.srcs/constrs_1/imports/ADC_Controller_DAC/xem7010.xdc:22]
@@ -202,7 +206,8 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 835.406 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 836.648 ; gain = 0.000
+WARNING: [Timing 38-316] Clock period '100.000' specified during out-of-context synthesis of instance 'acd_inst/sc_counter_inst' at clock pin 'CLK' is different from the actual clock period '2.500', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'acd_inst/control/s0/add' at clock pin 'CLK' is different from the actual clock period '2.500', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '100.000' specified during out-of-context synthesis of instance 'acd_inst/control/s1/mult' at clock pin 'CLK' is different from the actual clock period '2.500', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'acd_inst/control/s1/sub' at clock pin 'CLK' is different from the actual clock period '2.500', this can lead to different synthesis results.
@@ -211,14 +216,14 @@ WARNING: [Timing 38-316] Clock period '100.000' specified during out-of-context 
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'acd_inst/control/s3/add' at clock pin 'CLK' is different from the actual clock period '2.500', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '100.000' specified during out-of-context synthesis of instance 'cpu_inst/on_time_counter_inst' at clock pin 'CLK' is different from the actual clock period '2.500', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 835.406 ; gain = 490.082
+Finished Constraint Validation : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 836.648 ; gain = 491.359
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a50tfgg484-3
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 835.406 ; gain = 490.082
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 836.648 ; gain = 491.359
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -231,8 +236,9 @@ Applied set_property DONT_TOUCH = true for acd_inst/control/s1/sub. (constraint 
 Applied set_property DONT_TOUCH = true for acd_inst/control/s0/add. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for cpu_inst/on_time_counter_inst. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for inst0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for acd_inst/sc_counter_inst. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 835.406 ; gain = 490.082
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 836.648 ; gain = 491.359
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "sw_on" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "FF_clear" won't be mapped to RAM because it is too sparse
@@ -267,14 +273,14 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-                  iSTATE |                               00 |                              000
-                 iSTATE0 |                               01 |                              001
-                 iSTATE1 |                               10 |                              010
-                 iSTATE2 |                               11 |                              011
+                  iSTATE |                             0001 |                              000
+                 iSTATE0 |                             0010 |                              001
+                 iSTATE1 |                             0100 |                              010
+                 iSTATE2 |                             1000 |                              011
 ---------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'DAC_AD9744'
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'DAC_AD9744'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 835.406 ; gain = 490.082
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 836.648 ; gain = 491.359
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -287,6 +293,7 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
+	   2 Input     14 Bit       Adders := 1     
 	   2 Input      8 Bit       Adders := 1     
 	   2 Input      6 Bit       Adders := 1     
 	   2 Input      4 Bit       Adders := 1     
@@ -314,16 +321,15 @@ Detailed RTL Component Info :
 	   2 Input      6 Bit        Muxes := 2     
 	   6 Input      6 Bit        Muxes := 1     
 	   2 Input      5 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 5     
+	   2 Input      4 Bit        Muxes := 2     
 	   4 Input      4 Bit        Muxes := 1     
 	   2 Input      3 Bit        Muxes := 1     
 	   9 Input      3 Bit        Muxes := 1     
 	   6 Input      3 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 4     
 	   3 Input      2 Bit        Muxes := 1     
-	   4 Input      2 Bit        Muxes := 1     
 	   9 Input      1 Bit        Muxes := 11    
-	   2 Input      1 Bit        Muxes := 12    
+	   2 Input      1 Bit        Muxes := 11    
 	   6 Input      1 Bit        Muxes := 6     
 	   3 Input      1 Bit        Muxes := 3     
 	   4 Input      1 Bit        Muxes := 3     
@@ -409,13 +415,13 @@ Detailed RTL Component Info :
 	                4 Bit    Registers := 1     
 	                1 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input      4 Bit        Muxes := 4     
+	   2 Input      4 Bit        Muxes := 1     
 	   4 Input      4 Bit        Muxes := 1     
-	   4 Input      2 Bit        Muxes := 1     
 	   4 Input      1 Bit        Muxes := 3     
-	   2 Input      1 Bit        Muxes := 1     
 Module ACD 
 Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     14 Bit       Adders := 1     
 +---Registers : 
 	               16 Bit    Registers := 2     
 	               14 Bit    Registers := 1     
@@ -451,7 +457,6 @@ WARNING: [Synth 8-3917] design main has port cnv_n driven by constant 0
 WARNING: [Synth 8-3917] design main has port mode driven by constant 0
 WARNING: [Synth 8-3331] design main has unconnected port comp_edge
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cpu_inst/ctrl_start_reg_reg[0] )
-INFO: [Synth 8-3886] merging instance 'acd_inst/ctrl_2_dac_buff_reg[0]' (FDRE) to 'acd_inst/ctrl_2_dac_buff_reg[1]'
 INFO: [Synth 8-3886] merging instance 'acd_inst/ctrl_2_dac_buff_reg[1]' (FDRE) to 'acd_inst/ctrl_2_dac_buff_reg[2]'
 INFO: [Synth 8-3886] merging instance 'acd_inst/ctrl_2_dac_buff_reg[2]' (FDRE) to 'acd_inst/ctrl_2_dac_buff_reg[3]'
 INFO: [Synth 8-3886] merging instance 'acd_inst/ctrl_2_dac_buff_reg[3]' (FDRE) to 'acd_inst/ctrl_2_dac_buff_reg[4]'
@@ -460,7 +465,8 @@ INFO: [Synth 8-3886] merging instance 'acd_inst/ctrl_2_dac_buff_reg[5]' (FDRE) t
 INFO: [Synth 8-3886] merging instance 'acd_inst/ctrl_2_dac_buff_reg[6]' (FDRE) to 'acd_inst/ctrl_2_dac_buff_reg[7]'
 INFO: [Synth 8-3886] merging instance 'acd_inst/ctrl_2_dac_buff_reg[7]' (FDRE) to 'acd_inst/ctrl_2_dac_buff_reg[8]'
 INFO: [Synth 8-3886] merging instance 'acd_inst/ctrl_2_dac_buff_reg[8]' (FDRE) to 'acd_inst/ctrl_2_dac_buff_reg[9]'
-INFO: [Synth 8-3886] merging instance 'acd_inst/ctrl_2_dac_buff_reg[9]' (FDRE) to 'acd_inst/ctrl_2_dac_buff_reg[11]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/ctrl_2_dac_buff_reg[9]' (FDRE) to 'acd_inst/ctrl_2_dac_buff_reg[10]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/ctrl_2_dac_buff_reg[10]' (FDRE) to 'acd_inst/ctrl_2_dac_buff_reg[11]'
 INFO: [Synth 8-3886] merging instance 'acd_inst/ctrl_2_dac_buff_reg[11]' (FDRE) to 'acd_inst/ctrl_2_dac_buff_reg[12]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\acd_inst/ctrl_2_dac_buff_reg[12] )
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (\acd_inst/ctrl_2_dac_buff_reg[13] )
@@ -470,17 +476,6 @@ INFO: [Synth 8-3333] propagating constant 1 across sequential element (\acd_inst
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\acd_inst/adc/tp_reg )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cpu_inst/FF_clear_reg )
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (\cpu_inst/FF_preset_reg )
-INFO: [Synth 8-3886] merging instance 'acd_inst/ctrl_2_dac_reg[0]' (FDR) to 'acd_inst/ctrl_2_dac_reg[1]'
-INFO: [Synth 8-3886] merging instance 'acd_inst/ctrl_2_dac_reg[1]' (FDR) to 'acd_inst/ctrl_2_dac_reg[2]'
-INFO: [Synth 8-3886] merging instance 'acd_inst/ctrl_2_dac_reg[2]' (FDR) to 'acd_inst/ctrl_2_dac_reg[3]'
-INFO: [Synth 8-3886] merging instance 'acd_inst/ctrl_2_dac_reg[3]' (FDR) to 'acd_inst/ctrl_2_dac_reg[4]'
-INFO: [Synth 8-3886] merging instance 'acd_inst/ctrl_2_dac_reg[4]' (FDR) to 'acd_inst/ctrl_2_dac_reg[5]'
-INFO: [Synth 8-3886] merging instance 'acd_inst/ctrl_2_dac_reg[5]' (FDR) to 'acd_inst/ctrl_2_dac_reg[6]'
-INFO: [Synth 8-3886] merging instance 'acd_inst/ctrl_2_dac_reg[6]' (FDR) to 'acd_inst/ctrl_2_dac_reg[7]'
-INFO: [Synth 8-3886] merging instance 'acd_inst/ctrl_2_dac_reg[7]' (FDR) to 'acd_inst/ctrl_2_dac_reg[8]'
-INFO: [Synth 8-3886] merging instance 'acd_inst/ctrl_2_dac_reg[8]' (FDR) to 'acd_inst/ctrl_2_dac_reg[9]'
-INFO: [Synth 8-3886] merging instance 'acd_inst/ctrl_2_dac_reg[9]' (FDR) to 'acd_inst/ctrl_2_dac_reg[11]'
-INFO: [Synth 8-3886] merging instance 'acd_inst/ctrl_2_dac_reg[11]' (FDR) to 'acd_inst/ctrl_2_dac_reg[12]'
 WARNING: [Synth 8-3332] Sequential element (cpu_inst/state_reg[9]) is unused and will be removed from module main.
 WARNING: [Synth 8-3332] Sequential element (cpu_inst/FF_preset_reg) is unused and will be removed from module main.
 WARNING: [Synth 8-3332] Sequential element (cpu_inst/FF_clear_reg) is unused and will be removed from module main.
@@ -500,10 +495,12 @@ WARNING: [Synth 8-3332] Sequential element (acd_inst/ctrl_2_dac_buff_reg[15]) is
 WARNING: [Synth 8-3332] Sequential element (acd_inst/ctrl_2_dac_buff_reg[14]) is unused and will be removed from module main.
 WARNING: [Synth 8-3332] Sequential element (acd_inst/ctrl_2_dac_buff_reg[13]) is unused and will be removed from module main.
 WARNING: [Synth 8-3332] Sequential element (acd_inst/ctrl_2_dac_buff_reg[12]) is unused and will be removed from module main.
-WARNING: [Synth 8-3332] Sequential element (acd_inst/ctrl_2_dac_reg[13]) is unused and will be removed from module main.
-WARNING: [Synth 8-3332] Sequential element (acd_inst/ctrl_2_dac_reg[12]) is unused and will be removed from module main.
+INFO: [Synth 8-3886] merging instance 'acd_inst/dac/count_reg[1]' (FDC) to 'acd_inst/dac/count_reg[2]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/dac/count_reg[2]' (FDC) to 'acd_inst/dac/count_reg[3]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\acd_inst/dac/count_reg[3] )
+WARNING: [Synth 8-3332] Sequential element (acd_inst/dac/count_reg[3]) is unused and will be removed from module main.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 835.406 ; gain = 490.082
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 836.648 ; gain = 491.359
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -519,13 +516,13 @@ INFO: [Synth 8-5578] Moved timing constraint from pin 'inst0/clk_out1' to pin 'i
 INFO: [Synth 8-5783] Moving clock source from hierarchical pin 'inst0/clk_in1' to 'IBUFDS_inst0/O'
 INFO: [Synth 8-5819] Moved 2 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 835.406 ; gain = 490.082
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:33 . Memory (MB): peak = 836.648 ; gain = 491.359
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 852.434 ; gain = 507.109
+Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 848.164 ; gain = 502.875
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -536,10 +533,8 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\acd_inst/dac/count_reg[3] )
-WARNING: [Synth 8-3332] Sequential element (acd_inst/dac/count_reg[3]) is unused and will be removed from module main.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:30 ; elapsed = 00:00:34 . Memory (MB): peak = 853.969 ; gain = 508.645
+Finished Technology Mapping : Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 849.797 ; gain = 504.508
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -563,7 +558,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 853.969 ; gain = 508.645
+Finished IO Insertion : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 849.797 ; gain = 504.508
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -576,7 +571,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 853.969 ; gain = 508.645
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 849.797 ; gain = 504.508
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -588,25 +583,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:31 ; elapsed = 00:00:35 . Memory (MB): peak = 853.969 ; gain = 508.645
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 849.797 ; gain = 504.508
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:31 ; elapsed = 00:00:35 . Memory (MB): peak = 853.969 ; gain = 508.645
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 849.797 ; gain = 504.508
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:31 ; elapsed = 00:00:35 . Memory (MB): peak = 853.969 ; gain = 508.645
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 849.797 ; gain = 504.508
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:31 ; elapsed = 00:00:35 . Memory (MB): peak = 853.969 ; gain = 508.645
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 849.797 ; gain = 504.508
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -631,11 +626,12 @@ Report BlackBoxes:
 |      |BlackBox name   |Instances |
 +------+----------------+----------+
 |1     |clk_wiz_0       |         1|
-|2     |c_addsub_2      |         1|
-|3     |c_addsub_0      |         1|
-|4     |mult_gen_0      |         2|
-|5     |c_addsub_1      |         2|
-|6     |on_time_counter |         1|
+|2     |sc_counter      |         1|
+|3     |c_addsub_2      |         1|
+|4     |c_addsub_0      |         1|
+|5     |mult_gen_0      |         2|
+|6     |c_addsub_1      |         2|
+|7     |on_time_counter |         1|
 +------+----------------+----------+
 
 Report Cell Usage: 
@@ -650,31 +646,32 @@ Report Cell Usage:
 |6     |mult_gen_0      |     1|
 |7     |mult_gen_0__1   |     1|
 |8     |on_time_counter |     1|
-|9     |BUFG            |     1|
-|10    |CARRY4          |    29|
-|11    |LUT1            |     7|
-|12    |LUT2            |    71|
-|13    |LUT3            |    43|
-|14    |LUT4            |    25|
-|15    |LUT5            |    27|
-|16    |LUT6            |    41|
-|17    |SRL16E          |     2|
-|18    |FDCE            |   231|
-|19    |FDPE            |     1|
-|20    |FDRE            |   147|
-|21    |FDSE            |     2|
-|22    |IBUF            |     4|
-|23    |IBUFDS          |     4|
-|24    |OBUF            |    27|
-|25    |OBUFDS          |     1|
+|9     |sc_counter      |     1|
+|10    |BUFG            |     1|
+|11    |CARRY4          |    33|
+|12    |LUT1            |     8|
+|13    |LUT2            |    67|
+|14    |LUT3            |    45|
+|15    |LUT4            |    26|
+|16    |LUT5            |    26|
+|17    |LUT6            |    38|
+|18    |SRL16E          |     2|
+|19    |FDCE            |   230|
+|20    |FDPE            |     2|
+|21    |FDRE            |   159|
+|22    |FDSE            |     3|
+|23    |IBUF            |     4|
+|24    |IBUFDS          |     4|
+|25    |OBUF            |    27|
+|26    |OBUFDS          |     1|
 +------+----------------+------+
 
 Report Instance Areas: 
 +------+-----------------+-----------+------+
 |      |Instance         |Module     |Cells |
 +------+-----------------+-----------+------+
-|1     |top              |           |   834|
-|2     |  acd_inst       |ACD        |   609|
+|1     |top              |           |   864|
+|2     |  acd_inst       |ACD        |   641|
 |3     |    adc          |ADC        |    66|
 |4     |      sync       |sync_reg   |    13|
 |5     |    control      |controller |   512|
@@ -682,20 +679,20 @@ Report Instance Areas:
 |7     |      s1         |stage1     |    48|
 |8     |      s2         |stage2     |    64|
 |9     |      s3         |stage3     |    88|
-|10    |    dac          |DAC_AD9744 |    11|
-|11    |  cpu_inst       |cpu        |    55|
+|10    |    dac          |DAC_AD9744 |     7|
+|11    |  cpu_inst       |cpu        |    53|
 |12    |  debounce_inst1 |debounce   |    45|
 |13    |  debounce_inst2 |debounce_0 |    44|
 |14    |  debounce_inste |debounce_1 |    45|
 +------+-----------------+-----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:31 ; elapsed = 00:00:35 . Memory (MB): peak = 853.969 ; gain = 508.645
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 849.797 ; gain = 504.508
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 28 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:27 . Memory (MB): peak = 853.969 ; gain = 173.801
-Synthesis Optimization Complete : Time (s): cpu = 00:00:31 ; elapsed = 00:00:35 . Memory (MB): peak = 853.969 ; gain = 508.645
+Synthesis finished with 0 errors, 0 critical warnings and 26 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:26 . Memory (MB): peak = 849.797 ; gain = 169.230
+Synthesis Optimization Complete : Time (s): cpu = 00:00:31 ; elapsed = 00:00:35 . Memory (MB): peak = 849.797 ; gain = 504.508
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 38 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 42 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -703,10 +700,10 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-123 Infos, 88 Warnings, 0 Critical Warnings and 0 Errors encountered.
+116 Infos, 87 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:33 ; elapsed = 00:00:38 . Memory (MB): peak = 853.969 ; gain = 520.117
+synth_design: Time (s): cpu = 00:00:33 ; elapsed = 00:00:38 . Memory (MB): peak = 849.797 ; gain = 515.977
 INFO: [Common 17-1381] The checkpoint 'C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.runs/synth_1/main.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file main_utilization_synth.rpt -pb main_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.034 . Memory (MB): peak = 853.969 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Sat Mar 21 17:06:12 2020...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.033 . Memory (MB): peak = 849.797 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Thu Mar 26 13:29:09 2020...

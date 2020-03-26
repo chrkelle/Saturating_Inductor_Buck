@@ -1,0 +1,3 @@
+NumberHits:1
+Timestamp: Mon Mar 23 20:26:55 UTC 2020
+VLNV: xilinx.com:ip:c_counter_binary:12.0
