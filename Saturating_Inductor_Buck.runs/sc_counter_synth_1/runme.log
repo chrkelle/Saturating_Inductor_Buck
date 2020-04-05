@@ -14,9 +14,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a50t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a50t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 16528 
+INFO: Helper process launched with PID 16904 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 443.672 ; gain = 98.820
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 443.934 ; gain = 98.641
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'sc_counter' [c:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.srcs/sources_1/ip/sc_counter/synth/sc_counter.vhd:67]
 	Parameter C_IMPLEMENTATION bound to: 0 - type: integer 
@@ -27,7 +27,7 @@ INFO: [Synth 8-638] synthesizing module 'sc_counter' [c:/Users/cuixf/Documents/G
 	Parameter C_HAS_SCLR bound to: 0 - type: integer 
 	Parameter C_RESTRICT_COUNT bound to: 0 - type: integer 
 	Parameter C_COUNT_TO bound to: 1 - type: string 
-	Parameter C_COUNT_BY bound to: 10000 - type: string 
+	Parameter C_COUNT_BY bound to: 100 - type: string 
 	Parameter C_COUNT_MODE bound to: 0 - type: integer 
 	Parameter C_THRESH0_VALUE bound to: 1 - type: string 
 	Parameter C_CE_OVERRIDES_SYNC bound to: 0 - type: integer 
@@ -116,7 +116,7 @@ WARNING: [Synth 8-3331] design c_counter_binary_v12_0_12_legacy has unconnected 
 WARNING: [Synth 8-3331] design c_counter_binary_v12_0_12_legacy has unconnected port sclr
 WARNING: [Synth 8-3331] design c_counter_binary_v12_0_12_legacy has unconnected port sset
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 507.824 ; gain = 162.973
+Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 507.977 ; gain = 162.684
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -129,10 +129,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 507.824 ; gain = 162.973
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 507.977 ; gain = 162.684
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 507.824 ; gain = 162.973
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 507.977 ; gain = 162.684
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 33 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -150,26 +150,26 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 794.742 ; gain = 1.570
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.026 . Memory (MB): peak = 796.406 ; gain = 1.500
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 794.742 ; gain = 449.891
+Finished Constraint Validation : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 796.406 ; gain = 451.113
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a50tfgg484-3
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 794.742 ; gain = 449.891
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 796.406 ; gain = 451.113
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 Applied set_property DONT_TOUCH = true for U0. (constraint file  C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.runs/sc_counter_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 794.742 ; gain = 449.891
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 796.406 ; gain = 451.113
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 794.742 ; gain = 449.891
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 796.406 ; gain = 451.113
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -225,7 +225,7 @@ WARNING: [Synth 8-3331] design c_counter_binary_v12_0_12_viv has unconnected por
 WARNING: [Synth 8-3331] design c_counter_binary_v12_0_12_viv has unconnected port L[1]
 WARNING: [Synth 8-3331] design c_counter_binary_v12_0_12_viv has unconnected port L[0]
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 794.742 ; gain = 449.891
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 796.406 ; gain = 451.113
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -237,13 +237,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 809.398 ; gain = 464.547
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:00:36 . Memory (MB): peak = 806.770 ; gain = 461.477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 809.398 ; gain = 464.547
+Finished Timing Optimization : Time (s): cpu = 00:00:32 ; elapsed = 00:00:36 . Memory (MB): peak = 806.844 ; gain = 461.551
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -255,7 +255,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 818.930 ; gain = 474.078
+Finished Technology Mapping : Time (s): cpu = 00:00:32 ; elapsed = 00:00:36 . Memory (MB): peak = 816.375 ; gain = 471.082
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -279,7 +279,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:34 ; elapsed = 00:00:37 . Memory (MB): peak = 818.930 ; gain = 474.078
+Finished IO Insertion : Time (s): cpu = 00:00:33 ; elapsed = 00:00:37 . Memory (MB): peak = 816.375 ; gain = 471.082
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -292,7 +292,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:34 ; elapsed = 00:00:37 . Memory (MB): peak = 818.930 ; gain = 474.078
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:33 ; elapsed = 00:00:37 . Memory (MB): peak = 816.375 ; gain = 471.082
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -304,25 +304,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:34 ; elapsed = 00:00:37 . Memory (MB): peak = 818.930 ; gain = 474.078
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:33 ; elapsed = 00:00:37 . Memory (MB): peak = 816.375 ; gain = 471.082
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:34 ; elapsed = 00:00:37 . Memory (MB): peak = 818.930 ; gain = 474.078
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:33 ; elapsed = 00:00:37 . Memory (MB): peak = 816.375 ; gain = 471.082
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:34 ; elapsed = 00:00:37 . Memory (MB): peak = 818.930 ; gain = 474.078
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:33 ; elapsed = 00:00:37 . Memory (MB): peak = 816.375 ; gain = 471.082
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:34 ; elapsed = 00:00:37 . Memory (MB): peak = 818.930 ; gain = 474.078
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:33 ; elapsed = 00:00:37 . Memory (MB): peak = 816.375 ; gain = 471.082
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -344,11 +344,11 @@ Report Cell Usage:
 |4     |FDRE  |    17|
 +------+------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:34 ; elapsed = 00:00:37 . Memory (MB): peak = 818.930 ; gain = 474.078
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:33 ; elapsed = 00:00:37 . Memory (MB): peak = 816.375 ; gain = 471.082
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 22 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:29 . Memory (MB): peak = 818.930 ; gain = 187.160
-Synthesis Optimization Complete : Time (s): cpu = 00:00:34 ; elapsed = 00:00:37 . Memory (MB): peak = 818.930 ; gain = 474.078
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:30 . Memory (MB): peak = 816.375 ; gain = 182.652
+Synthesis Optimization Complete : Time (s): cpu = 00:00:33 ; elapsed = 00:00:37 . Memory (MB): peak = 816.375 ; gain = 471.082
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 33 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -361,11 +361,11 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 16 Infos, 94 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:35 ; elapsed = 00:00:40 . Memory (MB): peak = 829.152 ; gain = 495.773
+synth_design: Time (s): cpu = 00:00:35 ; elapsed = 00:00:39 . Memory (MB): peak = 827.742 ; gain = 493.922
 INFO: [Common 17-1381] The checkpoint 'C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.runs/sc_counter_synth_1/sc_counter.dcp' has been generated.
 INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP c:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.srcs/sources_1/ip/sc_counter/sc_counter.xci
 INFO: [Coretcl 2-1174] Renamed 7 cell refs.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/cuixf/Documents/GitHub/Saturating_Inductor_Buck/Saturating_Inductor_Buck.runs/sc_counter_synth_1/sc_counter.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file sc_counter_utilization_synth.rpt -pb sc_counter_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.029 . Memory (MB): peak = 833.477 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Thu Mar 26 13:28:14 2020...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.033 . Memory (MB): peak = 827.742 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Thu Apr  2 10:08:42 2020...

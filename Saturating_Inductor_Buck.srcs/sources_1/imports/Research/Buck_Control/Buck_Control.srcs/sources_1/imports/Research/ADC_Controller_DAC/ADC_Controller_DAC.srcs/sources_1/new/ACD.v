@@ -109,8 +109,15 @@ module ACD(clk, reset, hi_muxsel, start, step_up, ctrl_start, dco_p, dco_n,
         //    ctrl_2_dac <= 8192;  
         //end
         else if (control_done) begin
-            // ctrl_2_dac <= i_mid ^ 14'b10_0000_0000_0000;
-             ctrl_2_dac_buff <= 14'b10_0000_0000_0001;
+            // ctrl_2_dac <= i_mid ^ 14'b1  0_0000_0000_0000;
+                if (step_up) begin
+                    // ctrl_2_dac_buff <= 14'b10_0001_0110_0000;
+                    ctrl_2_dac_buff <= 14'b10_0001_1100_0000;
+                    end
+                else begin
+                    //ctrl_2_dac_buff    <= 14'b10_0001_0000_0000;
+                    ctrl_2_dac_buff <=  14'b10_0001_0100_0000;
+                end
              end 
      end
      
@@ -119,7 +126,8 @@ module ACD(clk, reset, hi_muxsel, start, step_up, ctrl_start, dco_p, dco_n,
                     ctrl_2_dac <= 8192;
                 end
                 else begin
-                     ctrl_2_dac <= ctrl_2_dac_buff + sc_cntr_mid;
+                     //ctrl_2_dac <= ctrl_2_dac_buff + sc_cntr_mid;
+                     ctrl_2_dac <= ctrl_2_dac_buff;
                 end  
        end
              

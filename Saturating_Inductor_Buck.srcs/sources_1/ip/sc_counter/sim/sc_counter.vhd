@@ -124,7 +124,7 @@ BEGIN
       C_HAS_SCLR => 0,
       C_RESTRICT_COUNT => 0,
       C_COUNT_TO => "1",
-      C_COUNT_BY => "10000",
+      C_COUNT_BY => "100",
       C_COUNT_MODE => 0,
       C_THRESH0_VALUE => "1",
       C_CE_OVERRIDES_SYNC => 0,
